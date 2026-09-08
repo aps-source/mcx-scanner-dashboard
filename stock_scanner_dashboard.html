@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>MCX Commodity Scanner (MWD)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --page:           #f6f4ff;
+    --surface-1:      #ffffff;
+    --surface-2:      #f1ecfd;
+    --text-primary:   #1a1530;
+    --text-secondary: #5b5478;
+    --text-muted:     #8b84a8;
+    --gridline:       #e5defb;
+    --border:         rgba(26,21,48,0.12);
+
+    --accent:         #7c3aed;
+    --accent-2:       #db2777;
+    --accent-soft:    rgba(124,58,237,0.12);
+
+    --good:           #12996a;
+    --good-soft:      rgba(18,153,106,0.14);
+    --critical:       #e11d48;
+    --critical-soft:  rgba(225,29,72,0.13);
+    --warning:        #ea580c;
+    --warning-soft:   rgba(234,88,12,0.14);
+    --neutral-bg:     #efeafc;
+    --neutral-text:   #6b6390;
+
+    --cat-equity:     #2563eb;
+    --cat-index:      #db2777;
+    --cat-mcx:        #ca8a04;
+
+    --font-display: "Sora", "Manrope", -apple-system, "Segoe UI", sans-serif;
+    --font-body:    "Manrope", -apple-system, "Segoe UI", sans-serif;
+    --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --page:           #100a20;
+      --surface-1:      #1b1433;
+      --surface-2:      #251b44;
+      --text-primary:   #f4f1ff;
+      --text-secondary: #bcb1e0;
+      --text-muted:     #8d81b5;
+      --gridline:       #362a56;
+      --border:         rgba(244,241,255,0.13);
+
+      --accent:         #b794fa;
+      --accent-2:       #f472b6;
+      --accent-soft:    rgba(183,148,250,0.18);
+
+      --good:           #34d399;
+      --good-soft:      rgba(52,211,153,0.16);
+      --critical:       #fb7185;
+      --critical-soft:  rgba(251,113,133,0.16);
+      --warning:        #fb923c;
+      --warning-soft:   rgba(251,146,60,0.16);
+      --neutral-bg:     #2b2050;
+      --neutral-text:   #bcb1e0;
+
+      --cat-equity:     #60a5fa;
+      --cat-index:      #f472b6;
+      --cat-mcx:        #fbbf24;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+  }
+  header {
+    padding: 22px 24px 14px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(90deg, var(--accent), var(--accent-2), var(--cat-mcx)) 1;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-size: 23px; margin: 0; font-weight: 800; letter-spacing: -0.01em;
+  }
+  h1 .brand-hi { color: var(--accent); }
+  .sub { color: var(--text-secondary); font-size: 14.5px; margin-top: 3px; }
+  #status-bar {
+    padding: 12px 24px 14px;
+    display: flex;
+    gap: 10px 14px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+  #status-bar > span {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 13px;
+  }
+  #status-bar b { color: var(--text-primary); font-family: var(--font-mono); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: middle; flex: none; box-shadow: 0 0 0 3px currentColor; opacity: 1; }
+  .dot.live { background: var(--good); color: var(--good-soft); }
+  .dot.stale { background: var(--critical); color: var(--critical-soft); }
+  .dot-call    { background: var(--good); }
+  .dot-put     { background: var(--critical); }
+  .dot-err     { background: var(--warning); }
+  .dot-equity  { background: var(--cat-equity); }
+  .dot-index   { background: var(--cat-index); }
+  .dot-mcx     { background: var(--cat-mcx); }
+  #filters {
+    padding: 0 24px 10px;
+    display: flex;
+    gap: 8px;
+  }
+  #category-filters {
+    padding: 0 24px 18px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  #narrow-toggle.active {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    font-weight: 700;
+  }
+  .filter-btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    border: 1.5px solid var(--border);
+    background: var(--surface-1);
+    color: var(--text-secondary);
+    border-radius: 999px;
+    padding: 7px 15px;
+    font-family: var(--font-body);
+    font-size: 14.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+  }
+  .filter-btn:hover { transform: translateY(-1px); }
+  .filter-btn.active {
+    color: var(--text-primary);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    font-weight: 800;
+  }
+  .filter-btn[data-filter="CALL"].active { color: var(--good); border-color: var(--good); background: var(--good-soft); }
+  .filter-btn[data-filter="PUT"].active { color: var(--critical); border-color: var(--critical); background: var(--critical-soft); }
+  .filter-btn[data-category="EQUITY"].active { color: var(--cat-equity); border-color: var(--cat-equity); background: color-mix(in srgb, var(--cat-equity) 14%, transparent); }
+  .filter-btn[data-category="INDEX"].active { color: var(--cat-index); border-color: var(--cat-index); background: color-mix(in srgb, var(--cat-index) 14%, transparent); }
+  .filter-btn[data-category="MCX"].active { color: var(--cat-mcx); border-color: var(--cat-mcx); background: color-mix(in srgb, var(--cat-mcx) 16%, transparent); }
+  #grid {
+    padding: 0 24px 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+    gap: 14px;
+  }
+  .card {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: 0 1px 2px rgba(26,21,48,0.04);
+  }
+  .card.card-CALL { border-left-color: var(--good); background: linear-gradient(180deg, var(--good-soft) 0%, var(--surface-1) 90px); }
+  .card.card-PUT  { border-left-color: var(--critical); background: linear-gradient(180deg, var(--critical-soft) 0%, var(--surface-1) 90px); }
+  .card.card-ERR  { border-left-color: var(--warning); background: linear-gradient(180deg, var(--warning-soft) 0%, var(--surface-1) 90px); }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+  .symbol-row { display: flex; align-items: center; gap: 6px; }
+  .symbol { font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.01em; }
+  .chart-link {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 20px; height: 20px; border-radius: 5px;
+    color: var(--text-muted); text-decoration: none;
+    border: 1px solid transparent;
+  }
+  .chart-link:hover { color: var(--accent); border-color: var(--border); background: var(--surface-2); }
+  .chart-link svg { width: 13px; height: 13px; }
+  .ltp { font-family: var(--font-mono); font-size: 15px; font-weight: 600; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+  .cat-chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 9px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-display);
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    padding: 4px 11px;
+    border-radius: 999px;
+  }
+  .badge.CALL { background: var(--good); color: #ffffff; }
+  .badge.PUT  { background: var(--critical); color: #ffffff; }
+  .badge.NONE { background: var(--neutral-bg); color: var(--neutral-text); }
+  .badge.ERR  { background: var(--warning); color: #ffffff; }
+  .crit-row { display: flex; align-items: center; gap: 6px; font-size: 13.5px; color: var(--text-secondary); padding: 2px 0; }
+  .crit-row .mark { width: 14px; text-align: center; font-weight: 800; }
+  .crit-row.met { color: var(--text-primary); font-weight: 600; }
+  .crit-row.met.call .mark { color: var(--good); }
+  .crit-row.met.put .mark { color: var(--critical); }
+  .crit-row.unmet .mark { color: var(--text-muted); }
+  .side-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin: 8px 0 3px; }
+  .levels { margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--gridline); font-family: var(--font-mono); font-size: 12.5px; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 4px 10px; }
+  .levels .lvl-group { width: 100%; display: flex; flex-wrap: wrap; gap: 4px 10px; }
+  .counter-row { margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--gridline); display: flex; align-items: center; justify-content: space-between; font-size: 14px; font-weight: 600; color: var(--text-secondary); }
+  .counter-row button {
+    border: 1.5px solid var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 6px;
+    width: 24px; height: 24px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .counter-row .count { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-weight: 700; color: var(--text-primary); }
+  .counter-row .count.over { color: var(--critical); }
+  .info-row { display: flex; align-items: center; gap: 6px; font-size: 13px; padding: 2px 0; }
+  .info-row .mark { width: 14px; text-align: center; font-weight: 800; }
+  .info-row.on .mark { color: var(--accent-2); }
+  .info-row.on { color: var(--text-primary); font-weight: 600; }
+  .info-row.off .mark { color: var(--text-muted); }
+  .info-row.off { color: var(--text-muted); }
+  .info-note { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); padding: 2px 0; font-style: italic; }
+  .option-levels { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 2px solid var(--gridline); background: var(--surface-2); border-radius: 9px; padding: 9px 11px 10px; margin-top: -2px; }
+  .ol-title { font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); margin-bottom: 6px; }
+  .ol-row { display: flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 17.5px; font-weight: 600; color: var(--text-secondary); padding: 2px 0; }
+  .ol-row b { margin-left: auto; color: var(--text-primary); font-weight: 800; font-variant-numeric: tabular-nums; }
+  .ol-dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .ol-dot.resistance { background: var(--critical); }
+  .ol-dot.maxpain { background: var(--warning); }
+  .ol-dot.support { background: var(--good); }
+  .err-card { color: var(--critical); font-size: 14px; font-weight: 600; }
+  footer { padding: 10px 24px 28px; font-size: 13px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>MCX Commodity Scanner <span class="brand-hi">MWD</span></h1>
+    <div class="sub">CRUDEOILM / GOLDM / SILVERM / NATGASMINI mini-futures &middot; ITM Call/Put buying signals &middot; CALL = above Weekly CPR + pivot + Daily R1 + EMA(5&gt;26&gt;50) stack on Daily/60m/15m + above prev-day high (mirrored for PUT, using S1)</div>
+  </div>
+  <a href="signal_log.html" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:14px;font-weight:800;color:#fff;background:var(--accent);border-radius:999px;padding:8px 16px;text-decoration:none;white-space:nowrap;">Signal history &rarr;</a>
+</header>
+
+<div id="status-bar">
+  <span><span class="dot" id="live-dot"></span><span id="live-text">loading…</span></span>
+  <span>Last scan: <b id="generated-at">–</b></span>
+  <span>CALL: <b id="call-count" style="color:var(--good)">0</b></span>
+  <span>PUT: <b id="put-count" style="color:var(--critical)">0</b></span>
+  <span>Errors: <b id="err-count" style="color:var(--warning)">0</b></span>
+  <span>Cap: <b id="cap-text" style="color:var(--accent)">–</b> per stock/day</span>
+</div>
+
+<div id="filters">
+  <button class="filter-btn active" data-filter="ALL">All (<span id="n-all">0</span>)</button>
+  <button class="filter-btn" data-filter="CALL"><span class="dot dot-call"></span>CALL (<span id="n-call">0</span>)</button>
+  <button class="filter-btn" data-filter="PUT"><span class="dot dot-put"></span>PUT (<span id="n-put">0</span>)</button>
+  <button class="filter-btn" data-filter="NONE">No signal (<span id="n-none">0</span>)</button>
+</div>
+
+<div id="category-filters">
+  <button class="filter-btn" id="narrow-toggle" data-narrow="0">Next-day CPR Narrow only</button>
+</div>
+
+<div id="grid"></div>
+
+<footer>
+  Reads stock_scanner_state.json from this folder every 15 minutes. Trade counters below are a manual per-browser
+  reminder only (stored in this browser's local storage) &mdash; nothing here places or tracks real orders.
+  Reset counters daily yourself, or clear browser storage.
+</footer>
+
+<script>
+const REFRESH_MS = 15 * 60 * 1000;
+const STATE_URL = "stock_scanner_state.json";
+const LS_KEY = "mcx_scanner_mwd_counters_v1";
+
+let currentFilter = "ALL";
+let currentCategory = "ALL";
+let narrowOnly = false;
+let lastData = null;
+
+const CAT_CLASS = { EQUITY: "equity", INDEX: "index", MCX: "mcx" };
+const CAT_LABEL = { EQUITY: "EQUITY", INDEX: "INDEX", MCX: "MCX" };
+
+function catChip(category) {
+  const cls = CAT_CLASS[category] || "equity";
+  const label = CAT_LABEL[category] || category;
+  return `<span class="cat-chip"><span class="dot dot-${cls}"></span>${label}</span>`;
+}
+
+function loadCounters() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(LS_KEY) || "{}");
+    const today = new Date().toISOString().slice(0, 10);
+    if (raw.date !== today) return { date: today, counts: {} };
+    return raw;
+  } catch (e) {
+    return { date: new Date().toISOString().slice(0, 10), counts: {} };
+  }
+}
+function saveCounters(state) {
+  localStorage.setItem(LS_KEY, JSON.stringify(state));
+}
+let counterState = loadCounters();
+
+function bumpCounter(symbol, delta) {
+  const cur = counterState.counts[symbol] || 0;
+  counterState.counts[symbol] = Math.max(0, cur + delta);
+  saveCounters(counterState);
+  render(lastData);
+}
+
+function critRow(label, met, dir) {
+  return `<div class="crit-row ${met ? "met " + dir : "unmet"}"><span class="mark">${met ? "✓" : "·"}</span>${label}</div>`;
+}
+
+function parseDetail(detail) {
+  // "Above Weekly CPR=Y, Daily EMA stack=n, ..." -> [[label, bool], ...]
+  return detail.split(", ").map(part => {
+    const idx = part.lastIndexOf("=");
+    return [part.slice(0, idx), part.slice(idx + 1) === "Y"];
+  });
+}
+
+const CHART_ICON_SVG = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12.5 6 7l3 3 5-6"/><path d="M11 4h3v3"/></svg>`;
+
+function chartLink(stock) {
+  if (!stock.chart_url) return "";
+  return `<a class="chart-link" href="${stock.chart_url}" target="_blank" rel="noopener noreferrer" title="Open ${stock.symbol} chart on Dhan" onclick="event.stopPropagation()">${CHART_ICON_SVG}</a>`;
+}
+
+function optionLevelsBlock(ol) {
+  if (!ol) return "";
+  return `<div class="option-levels">
+    <div class="ol-title">Option chain &middot; ${ol.expiry} exp &middot; spot ₹${ol.spot.toLocaleString("en-IN")}</div>
+    <div class="ol-row" title="Strike with the highest Call OI"><span class="ol-dot resistance"></span>Resistance<b>${ol.resistanceStrike ?? "–"}</b></div>
+    <div class="ol-row" title="Strike where option writers' payout is minimized"><span class="ol-dot maxpain"></span>Max Pain<b>${ol.maxPainStrike ?? "–"}</b></div>
+    <div class="ol-row" title="Strike with the highest Put OI"><span class="ol-dot support"></span>Support<b>${ol.supportStrike ?? "–"}</b></div>
+  </div>`;
+}
+
+function card(stock, meta) {
+  if (stock.error) {
+    return `<div class="card card-ERR"><div class="card-top"><div class="symbol-row"><span class="symbol">${stock.symbol}</span>${chartLink(stock)}</div>
+      <span class="badge ERR">ERROR</span></div>
+      ${catChip(stock.category)}
+      <div class="err-card">${stock.error}</div></div>`;
+  }
+
+  const sig = stock.signal;
+  const dir = sig === "PUT" ? "put" : "call";
+  const sideConds = sig === "PUT" ? stock.sell : stock.buy;
+  const rows = parseDetail(sideConds.detail).map(([label, met]) => critRow(label, met, dir)).join("");
+  const count = counterState.counts[stock.symbol] || 0;
+  const over = count >= meta.max_trades_per_day;
+  const lvl = stock.levels;
+
+  return `<div class="card card-${sig}">
+    <div class="card-top">
+      <div><div class="symbol-row"><span class="symbol">${stock.symbol}</span>${chartLink(stock)}</div><div class="ltp">₹${stock.ltp.toLocaleString("en-IN")}</div></div>
+      <span class="badge ${sig}">${sig === "NONE" ? "NO SIGNAL" : sig}</span>
+    </div>
+    ${catChip(stock.category)}
+    ${optionLevelsBlock(stock.optionLevels)}
+    <div class="side-label">${sig === "PUT" ? "Put criteria" : "Call criteria"} (${sideConds.count}/${sideConds.total})</div>
+    ${rows}
+    <div class="info-row ${stock.isNarrowCPR ? "on" : "off"}"><span class="mark">${stock.isNarrowCPR ? "✓" : "·"}</span>Narrow CPR (trending bias)</div>
+    <div class="levels">
+      <div class="lvl-group">
+        <span>OR(9:45) ${lvl.openRangeClose ?? "–"}</span>
+        <span>Pivot ${lvl.pivot ?? "–"}</span>
+        <span>R1 ${lvl.r1 ?? "–"}</span>
+        <span>S1 ${lvl.s1 ?? "–"}</span>
+        <span>PDH ${lvl.prevDayHigh ?? "–"}</span>
+        <span>PDL ${lvl.prevDayLow ?? "–"}</span>
+        <span>CPR width ${lvl.dailyCPR_width ?? "–"}</span>
+        <span>EMA5(15m) ${lvl.ema15_5 ?? "–"}</span>
+      </div>
+      <div class="lvl-group">
+        <span>Monthly CPR TC/P/BC ${lvl.monthlyCPR_tc ?? "–"}/${lvl.monthlyCPR_pivot ?? "–"}/${lvl.monthlyCPR_bc ?? "–"}</span>
+      </div>
+      <div class="lvl-group">
+        <span>Weekly CPR TC/P/BC ${lvl.weeklyCPR_tc ?? "–"}/${lvl.weeklyCPR_pivot ?? "–"}/${lvl.weeklyCPR_bc ?? "–"}</span>
+      </div>
+    </div>
+    <div class="info-note">ℹ Next-day CPR (info only, not a filter): ${lvl.nextDayCPR_width_pct != null ? lvl.nextDayCPR_width_pct + "%" : "–"}</div>
+    <div class="counter-row">
+      <span>Trades taken today</span>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <button onclick="bumpCounter('${stock.symbol}', -1)">–</button>
+        <span class="count ${over ? "over" : ""}">${count}/${meta.max_trades_per_day}</span>
+        <button onclick="bumpCounter('${stock.symbol}', 1)">+</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function render(data) {
+  if (!data) return;
+  lastData = data;
+  counterState = loadCounters();
+
+  const stocks = data.stocks;
+  const calls = stocks.filter(s => s.signal === "CALL");
+  const puts = stocks.filter(s => s.signal === "PUT");
+  const nones = stocks.filter(s => s.signal === "NONE" && !s.error);
+  const errs = stocks.filter(s => s.error);
+
+  document.getElementById("generated-at").textContent = new Date(data.generated_at).toLocaleString("en-IN");
+  document.getElementById("call-count").textContent = calls.length;
+  document.getElementById("put-count").textContent = puts.length;
+  document.getElementById("err-count").textContent = errs.length;
+  document.getElementById("cap-text").textContent =
+    `${data.meta.max_trades_per_day} trades / ₹${data.meta.max_loss_per_day} max loss`;
+
+  document.getElementById("n-all").textContent = stocks.length;
+  document.getElementById("n-call").textContent = calls.length;
+  document.getElementById("n-put").textContent = puts.length;
+  document.getElementById("n-none").textContent = nones.length;
+
+  const ageMin = (Date.now() - new Date(data.generated_at).getTime()) / 60000;
+  const dot = document.getElementById("live-dot");
+  const text = document.getElementById("live-text");
+  if (ageMin > 20) {
+    dot.className = "dot stale";
+    text.textContent = `stale (${Math.round(ageMin)} min old — is the 15-min scheduled task running?)`;
+  } else {
+    dot.className = "dot live";
+    text.textContent = "live";
+  }
+
+  let filtered = stocks;
+  if (currentFilter !== "ALL") {
+    filtered = filtered.filter(s => !s.error && s.signal === currentFilter);
+  }
+  if (currentCategory !== "ALL") {
+    filtered = filtered.filter(s => s.category === currentCategory);
+  }
+  if (narrowOnly) {
+    filtered = filtered.filter(s => s.isNextDayCPRNarrow === true);
+  }
+  // signals first (CALL/PUT), then NONE, errors last
+  const rank = { CALL: 0, PUT: 0, NONE: 1 };
+  filtered = filtered.slice().sort((a, b) => {
+    if (a.error) return 1;
+    if (b.error) return -1;
+    return (rank[a.signal] ?? 2) - (rank[b.signal] ?? 2);
+  });
+
+  document.getElementById("grid").innerHTML = filtered.map(s => card(s, data.meta)).join("");
+}
+
+async function refresh() {
+  try {
+    const res = await fetch(STATE_URL + "?t=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const data = await res.json();
+    render(data);
+  } catch (e) {
+    document.getElementById("live-text").textContent = "failed to load stock_scanner_state.json — " + e.message;
+    document.getElementById("live-dot").className = "dot stale";
+  }
+}
+
+document.querySelectorAll("#filters .filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll("#filters .filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    currentFilter = btn.dataset.filter;
+    render(lastData);
+  });
+});
+
+document.querySelectorAll("#category-filters .filter-btn[data-category]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll("#category-filters .filter-btn[data-category]").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    currentCategory = btn.dataset.category;
+    render(lastData);
+  });
+});
+
+document.getElementById("narrow-toggle").addEventListener("click", () => {
+  narrowOnly = !narrowOnly;
+  document.getElementById("narrow-toggle").classList.toggle("active", narrowOnly);
+  render(lastData);
+});
+
+refresh();
+setInterval(refresh, REFRESH_MS);
+</script>
+</body>
+</html>
