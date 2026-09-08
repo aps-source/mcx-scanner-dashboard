@@ -296,6 +296,14 @@
   .crit-row.met.put .mark { color: var(--critical); }
   .crit-row.unmet .mark { color: var(--text-muted); }
   .side-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin: 8px 0 3px; }
+  .atm-details { margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--gridline); }
+  .atm-details-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 5px; }
+  .atm-details-table { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 12.5px; }
+  .atm-details-table th { text-align: right; font-family: var(--font-body); font-weight: 600; color: var(--text-muted); padding: 0 0 3px; }
+  .atm-details-table th:first-child, .atm-details-table td:first-child { text-align: left; }
+  .atm-details-table td { text-align: right; padding: 2px 0; color: var(--text-secondary); }
+  .atm-details-table tr.atm-row-active td { color: var(--text-primary); font-weight: 700; }
+  .atm-details-table tr.atm-row-active td:first-child { color: var(--accent); }
   .levels { margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--gridline); font-family: var(--font-mono); font-size: 12.5px; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 4px 10px; }
   .levels .lvl-group { width: 100%; display: flex; flex-wrap: wrap; gap: 4px 10px; }
   .counter-row { margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--gridline); display: flex; align-items: center; justify-content: space-between; font-size: 14px; font-weight: 600; color: var(--text-secondary); }
@@ -464,6 +472,21 @@ function optionLevelsBlock(ol, atmStrike915) {
   </div>`;
 }
 
+function atmDetailsTable(ol, sig) {
+  const d = ol && ol.atmDetails;
+  if (!d) return "";
+  return `<div class="atm-details">
+    <div class="atm-details-title">ATM Option &middot; Strike ${d.strike.toLocaleString("en-IN")}</div>
+    <table class="atm-details-table">
+      <thead><tr><th></th><th>LTP</th><th>OI</th><th>IV</th></tr></thead>
+      <tbody>
+        <tr class="${sig === "CALL" ? "atm-row-active" : ""}"><td>CALL</td><td>₹${d.ce_ltp ?? "–"}</td><td>${d.ce_oi ?? "–"}</td><td>${d.ce_iv != null ? d.ce_iv + "%" : "–"}</td></tr>
+        <tr class="${sig === "PUT" ? "atm-row-active" : ""}"><td>PUT</td><td>₹${d.pe_ltp ?? "–"}</td><td>${d.pe_oi ?? "–"}</td><td>${d.pe_iv != null ? d.pe_iv + "%" : "–"}</td></tr>
+      </tbody>
+    </table>
+  </div>`;
+}
+
 function card(stock, meta) {
   if (stock.error) {
     return `<div class="card card-ERR"><div class="card-top"><div class="symbol-row"><span class="symbol">${stock.symbol}</span>${chartLink(stock)}</div>
@@ -489,6 +512,7 @@ function card(stock, meta) {
     ${optionLevelsBlock(stock.optionLevels, lvl.atmStrike915)}
     <div class="side-label">${sig === "PUT" ? "Put criteria" : "Call criteria"} (${sideConds.count}/${sideConds.total})</div>
     ${rows}
+    ${atmDetailsTable(stock.optionLevels, sig)}
     <div class="info-row ${stock.isNarrowCPR ? "on" : "off"}"><span class="mark">${stock.isNarrowCPR ? "✓" : "·"}</span>Narrow CPR (trending bias)</div>
     <div class="levels">
       <div class="lvl-group">
