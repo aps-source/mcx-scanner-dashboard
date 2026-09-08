@@ -119,5 +119,18 @@
     "err": 0,
     "call_symbols": [],
     "put_symbols": []
+  },
+  {
+    "generated_at": "2026-09-08T11:46:02.278454",
+    "date": "2026-09-08",
+    "time": "11:46",
+    "call": 1,
+    "put": 0,
+    "none": 3,
+    "err": 0,
+    "call_symbols": [
+      "CRUDEOILM"
+    ],
+    "put_symbols": []
   }
 ]
