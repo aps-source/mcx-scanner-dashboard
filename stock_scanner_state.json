@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T13:46:02.296403",
+  "generated_at": "2026-09-08T13:59:24.813526",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -51,7 +51,7 @@
       "optionLevels": {
         "expiry": "2026-09-17",
         "spot": 8644.0,
-        "maxPainStrike": 8750.0,
+        "maxPainStrike": 8800.0,
         "resistanceStrike": 9500.0,
         "supportStrike": 8000.0
       }
@@ -101,7 +101,7 @@
       "optionLevels": {
         "expiry": "2026-09-25",
         "spot": 152618.0,
-        "maxPainStrike": 154500.0,
+        "maxPainStrike": 154000.0,
         "resistanceStrike": 180000.0,
         "supportStrike": 140000.0
       }
@@ -203,7 +203,7 @@
         "spot": 281.1,
         "maxPainStrike": 280.0,
         "resistanceStrike": 280.0,
-        "supportStrike": 275.0
+        "supportStrike": 280.0
       }
     }
   ]

@@ -159,6 +159,28 @@
   .filter-btn[data-category="EQUITY"].active { color: var(--cat-equity); border-color: var(--cat-equity); background: color-mix(in srgb, var(--cat-equity) 14%, transparent); }
   .filter-btn[data-category="INDEX"].active { color: var(--cat-index); border-color: var(--cat-index); background: color-mix(in srgb, var(--cat-index) 14%, transparent); }
   .filter-btn[data-category="MCX"].active { color: var(--cat-mcx); border-color: var(--cat-mcx); background: color-mix(in srgb, var(--cat-mcx) 16%, transparent); }
+  #view-tabs {
+    padding: 0 24px 14px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 18px;
+  }
+  .view-tab {
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 8px 4px 12px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+  }
+  .view-tab:hover { color: var(--text-primary); }
+  .view-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .view-panel[hidden] { display: none; }
   #atm-table-wrap {
     margin: 0 24px 22px;
     background: var(--surface-1);
@@ -329,28 +351,37 @@
   <span>Cap: <b id="cap-text" style="color:var(--accent)">–</b> per stock/day</span>
 </div>
 
-<div id="filters">
-  <button class="filter-btn active" data-filter="ALL">All (<span id="n-all">0</span>)</button>
-  <button class="filter-btn" data-filter="CALL"><span class="dot dot-call"></span>CALL (<span id="n-call">0</span>)</button>
-  <button class="filter-btn" data-filter="PUT"><span class="dot dot-put"></span>PUT (<span id="n-put">0</span>)</button>
-  <button class="filter-btn" data-filter="NONE">No signal (<span id="n-none">0</span>)</button>
+<div id="view-tabs">
+  <button class="view-tab active" data-view="symbols">Symbols</button>
+  <button class="view-tab" data-view="atm">ATM Strike</button>
 </div>
 
-<div id="category-filters">
-  <button class="filter-btn" id="narrow-toggle" data-narrow="0">Today's CPR Narrow only</button>
+<div id="view-symbols" class="view-panel">
+  <div id="filters">
+    <button class="filter-btn active" data-filter="ALL">All (<span id="n-all">0</span>)</button>
+    <button class="filter-btn" data-filter="CALL"><span class="dot dot-call"></span>CALL (<span id="n-call">0</span>)</button>
+    <button class="filter-btn" data-filter="PUT"><span class="dot dot-put"></span>PUT (<span id="n-put">0</span>)</button>
+    <button class="filter-btn" data-filter="NONE">No signal (<span id="n-none">0</span>)</button>
+  </div>
+
+  <div id="category-filters">
+    <button class="filter-btn" id="narrow-toggle" data-narrow="0">Today's CPR Narrow only</button>
+  </div>
+
+  <div id="grid"></div>
 </div>
 
-<div id="atm-table-wrap">
-  <div class="atm-table-title">ATM Strike Reference (fixed at 9:15 session open)</div>
-  <table id="atm-table">
-    <thead>
-      <tr><th>Symbol</th><th>ATM Strike (9:15)</th><th>Current Price</th><th>Price vs ATM</th></tr>
-    </thead>
-    <tbody id="atm-table-body"></tbody>
-  </table>
+<div id="view-atm" class="view-panel" hidden>
+  <div id="atm-table-wrap">
+    <div class="atm-table-title">ATM Strike Reference (fixed at 9:15 session open)</div>
+    <table id="atm-table">
+      <thead>
+        <tr><th>Symbol</th><th>ATM Strike (9:15)</th><th>Current Price</th><th>Price vs ATM</th></tr>
+      </thead>
+      <tbody id="atm-table-body"></tbody>
+    </table>
+  </div>
 </div>
-
-<div id="grid"></div>
 
 <footer>
   Reads stock_scanner_state.json from this folder every 15 minutes. Trade counters below are a manual per-browser
@@ -593,6 +624,16 @@ document.getElementById("narrow-toggle").addEventListener("click", () => {
   narrowOnly = !narrowOnly;
   document.getElementById("narrow-toggle").classList.toggle("active", narrowOnly);
   render(lastData);
+});
+
+document.querySelectorAll("#view-tabs .view-tab").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll("#view-tabs .view-tab").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    const view = btn.dataset.view;
+    document.getElementById("view-symbols").hidden = view !== "symbols";
+    document.getElementById("view-atm").hidden = view !== "atm";
+  });
 });
 
 refresh();
