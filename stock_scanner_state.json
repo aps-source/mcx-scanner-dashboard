@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T14:42:44.438255",
+  "generated_at": "2026-09-08T14:46:02.946648",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -12,13 +12,13 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/crude-oil-mini-chart/",
       "error": null,
-      "ltp": 8937.0,
-      "last_bar_time": "2026-09-08T14:15:00",
-      "signal": "CALL",
+      "ltp": 8931.0,
+      "last_bar_time": "2026-09-08T14:30:00",
+      "signal": "NONE",
       "buy": {
-        "count": 7,
+        "count": 6,
         "total": 7,
-        "detail": "Daily EMA stack=Y, 60m EMA stack=Y, 15m EMA stack=Y, Above pivot=Y, Above prev-day high=Y, Above Daily R1=Y, Above ATM strike (9:15)=Y"
+        "detail": "Daily EMA stack=Y, 60m EMA stack=Y, 15m EMA stack=n, Above pivot=Y, Above prev-day high=Y, Above Daily R1=Y, Above ATM strike (9:15)=Y"
       },
       "sell": {
         "count": 0,
@@ -32,7 +32,7 @@
         "s1": 8628.67,
         "prevDayHigh": 8804.0,
         "prevDayLow": 8580.0,
-        "ema15_5": 8932.69,
+        "ema15_5": 8932.13,
         "monthlyCPR_tc": 7988.17,
         "monthlyCPR_pivot": 7838.33,
         "monthlyCPR_bc": 7688.5,
@@ -56,18 +56,18 @@
         "supportStrike": 8000.0,
         "atmDetails": {
           "strike": 8800.0,
-          "ce_ltp": 359.55,
-          "ce_oi": 6802.0,
-          "ce_iv": 75.07,
-          "ce_volume": 76338.0,
-          "ce_bid": 359.55,
-          "ce_ask": 360.6,
-          "pe_ltp": 235.7,
-          "pe_oi": 16841.0,
-          "pe_iv": 28.5,
-          "pe_volume": 61494.0,
-          "pe_bid": 235.1,
-          "pe_ask": 235.65
+          "ce_ltp": 365.45,
+          "ce_oi": 6817.0,
+          "ce_iv": 76.13,
+          "ce_volume": 76406.0,
+          "ce_bid": 368.0,
+          "ce_ask": 368.85,
+          "pe_ltp": 232.65,
+          "pe_oi": 16849.0,
+          "pe_iv": 27.93,
+          "pe_volume": 61725.0,
+          "pe_bid": 232.3,
+          "pe_ask": 232.75
         }
       }
     },
@@ -77,18 +77,18 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/gold-mini-chart/",
       "error": null,
-      "ltp": 152784.0,
-      "last_bar_time": "2026-09-08T14:15:00",
+      "ltp": 153085.0,
+      "last_bar_time": "2026-09-08T14:30:00",
       "signal": "NONE",
       "buy": {
-        "count": 0,
+        "count": 1,
         "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=n"
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=Y, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=n"
       },
       "sell": {
-        "count": 4,
+        "count": 2,
         "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=Y, 15m EMA stack=Y, Below pivot=Y, Below prev-day low=n, Below Daily S1=n, Below ATM strike (9:15)=Y"
+        "detail": "Daily EMA stack=n, 60m EMA stack=Y, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n, Below ATM strike (9:15)=Y"
       },
       "levels": {
         "openRangeClose": 154100.0,
@@ -97,7 +97,7 @@
         "s1": 152192.67,
         "prevDayHigh": 153436.0,
         "prevDayLow": 152010.0,
-        "ema15_5": 152839.64,
+        "ema15_5": 152921.43,
         "monthlyCPR_tc": 154295.33,
         "monthlyCPR_pivot": 153982.67,
         "monthlyCPR_bc": 153670.0,
@@ -121,18 +121,18 @@
         "supportStrike": 140000.0,
         "atmDetails": {
           "strike": 154000.0,
-          "ce_ltp": 2948.0,
-          "ce_oi": 1640.0,
-          "ce_iv": 24.33,
-          "ce_volume": 7867.0,
-          "ce_bid": 2940.0,
-          "ce_ask": 2948.0,
-          "pe_ltp": 3852.5,
-          "pe_oi": 777.0,
-          "pe_iv": 26.3,
-          "pe_volume": 4363.0,
-          "pe_bid": 3851.0,
-          "pe_ask": 3868.0
+          "ce_ltp": 2968.0,
+          "ce_oi": 1630.0,
+          "ce_iv": 24.48,
+          "ce_volume": 7916.0,
+          "ce_bid": 2964.0,
+          "ce_ask": 2975.0,
+          "pe_ltp": 3816.0,
+          "pe_oi": 775.0,
+          "pe_iv": 26.03,
+          "pe_volume": 4381.0,
+          "pe_bid": 3811.5,
+          "pe_ask": 3834.0
         }
       }
     },
@@ -142,18 +142,18 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/silver-mini-chart/",
       "error": null,
-      "ltp": 240049.0,
-      "last_bar_time": "2026-09-08T14:15:00",
+      "ltp": 240623.0,
+      "last_bar_time": "2026-09-08T14:30:00",
       "signal": "NONE",
       "buy": {
-        "count": 0,
+        "count": 1,
         "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=n"
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=Y, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=n"
       },
       "sell": {
-        "count": 2,
+        "count": 1,
         "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=Y, Below prev-day low=n, Below Daily S1=n, Below ATM strike (9:15)=Y"
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n, Below ATM strike (9:15)=Y"
       },
       "levels": {
         "openRangeClose": 242942.0,
@@ -162,7 +162,7 @@
         "s1": 238665.0,
         "prevDayHigh": 241621.0,
         "prevDayLow": 238071.0,
-        "ema15_5": 240101.84,
+        "ema15_5": 240275.56,
         "monthlyCPR_tc": 241470.83,
         "monthlyCPR_pivot": 240591.67,
         "monthlyCPR_bc": 239712.5,
@@ -186,18 +186,18 @@
         "supportStrike": 220000.0,
         "atmDetails": {
           "strike": 243000.0,
-          "ce_ltp": 6234.5,
+          "ce_ltp": 6473.0,
           "ce_oi": 351.0,
-          "ce_iv": 47.68,
-          "ce_volume": 1356.0,
-          "ce_bid": 6298.5,
-          "ce_ask": 6348.5,
-          "pe_ltp": 8839.0,
-          "pe_oi": 122.0,
-          "pe_iv": 18.14,
-          "pe_volume": 1057.0,
-          "pe_bid": 8815.5,
-          "pe_ask": 8874.0
+          "ce_iv": 48.92,
+          "ce_volume": 1371.0,
+          "ce_bid": 6444.5,
+          "ce_ask": 6486.5,
+          "pe_ltp": 8763.0,
+          "pe_oi": 117.0,
+          "pe_iv": 17.6,
+          "pe_volume": 1062.0,
+          "pe_bid": 8582.5,
+          "pe_ask": 8641.0
         }
       }
     },
@@ -207,8 +207,8 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/natural-gas-mini-chart/",
       "error": null,
-      "ltp": 282.7,
-      "last_bar_time": "2026-09-08T14:15:00",
+      "ltp": 283.0,
+      "last_bar_time": "2026-09-08T14:30:00",
       "signal": "NONE",
       "buy": {
         "count": 4,
@@ -227,7 +227,7 @@
         "s1": 277.4,
         "prevDayHigh": 283.8,
         "prevDayLow": 276.5,
-        "ema15_5": 282.3,
+        "ema15_5": 282.53,
         "monthlyCPR_tc": 276.8,
         "monthlyCPR_pivot": 274.1,
         "monthlyCPR_bc": 271.4,
@@ -251,17 +251,17 @@
         "supportStrike": 280.0,
         "atmDetails": {
           "strike": 280.0,
-          "ce_ltp": 12.5,
-          "ce_oi": 12801.0,
-          "ce_iv": 49.04,
-          "ce_volume": 19417.0,
-          "ce_bid": 12.5,
-          "ce_ask": 12.6,
-          "pe_ltp": 9.5,
-          "pe_oi": 10611.0,
-          "pe_iv": 45.97,
-          "pe_volume": 18951.0,
-          "pe_bid": 9.5,
+          "ce_ltp": 12.45,
+          "ce_oi": 12802.0,
+          "ce_iv": 48.83,
+          "ce_volume": 19559.0,
+          "ce_bid": 12.45,
+          "ce_ask": 12.5,
+          "pe_ltp": 9.6,
+          "pe_oi": 10654.0,
+          "pe_iv": 46.4,
+          "pe_volume": 19029.0,
+          "pe_bid": 9.55,
           "pe_ask": 9.6
         }
       }
