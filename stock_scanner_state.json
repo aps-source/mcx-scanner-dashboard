@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T10:31:03.355049",
+  "generated_at": "2026-09-08T10:37:46.670532",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -16,14 +16,14 @@
       "last_bar_time": "2026-09-08T10:15:00",
       "signal": "NONE",
       "buy": {
-        "count": 5,
+        "count": 4,
         "total": 7,
-        "detail": "Above Weekly CPR=Y, Daily EMA stack=Y, 60m EMA stack=Y, 15m EMA stack=Y, Above pivot=Y, Above prev-day high=n, Above Daily R1=n"
+        "detail": "Daily EMA stack=Y, 60m EMA stack=Y, 15m EMA stack=Y, Above pivot=Y, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=n"
       },
       "sell": {
-        "count": 0,
+        "count": 1,
         "total": 7,
-        "detail": "Below Weekly CPR=n, Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n"
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n, Below ATM strike (9:15)=Y"
       },
       "levels": {
         "openRangeClose": 8785.0,
@@ -44,13 +44,10 @@
         "dailyCPR_bc": 8692.0,
         "dailyCPR_width": 48.67,
         "dailyCPR_width_pct": 0.56,
-        "nextDayCPR_tc": 8792.33,
-        "nextDayCPR_pivot": 8789.67,
-        "nextDayCPR_bc": 8787.0,
-        "nextDayCPR_width_pct": 0.06
+        "priceAt915": 8795.0,
+        "atmStrike915": 8800.0
       },
       "isNarrowCPR": false,
-      "isNextDayCPRNarrow": true,
       "optionLevels": {
         "expiry": "2026-09-17",
         "spot": 8644.0,
@@ -71,12 +68,12 @@
       "buy": {
         "count": 5,
         "total": 7,
-        "detail": "Above Weekly CPR=Y, Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=Y, Above pivot=Y, Above prev-day high=Y, Above Daily R1=Y"
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=Y, Above pivot=Y, Above prev-day high=Y, Above Daily R1=Y, Above ATM strike (9:15)=Y"
       },
       "sell": {
         "count": 0,
         "total": 7,
-        "detail": "Below Weekly CPR=n, Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n"
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n, Below ATM strike (9:15)=n"
       },
       "levels": {
         "openRangeClose": 154100.0,
@@ -97,13 +94,10 @@
         "dailyCPR_bc": 152723.0,
         "dailyCPR_width": 182.67,
         "dailyCPR_width_pct": 0.12,
-        "nextDayCPR_tc": 154001.33,
-        "nextDayCPR_pivot": 153902.67,
-        "nextDayCPR_bc": 153804.0,
-        "nextDayCPR_width_pct": 0.13
+        "priceAt915": 153784.0,
+        "atmStrike915": 154000.0
       },
       "isNarrowCPR": true,
-      "isNextDayCPRNarrow": true,
       "optionLevels": {
         "expiry": "2026-09-25",
         "spot": 152090.0,
@@ -122,14 +116,14 @@
       "last_bar_time": "2026-09-08T10:15:00",
       "signal": "NONE",
       "buy": {
-        "count": 5,
+        "count": 4,
         "total": 7,
-        "detail": "Above Weekly CPR=Y, Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=Y, Above pivot=Y, Above prev-day high=Y, Above Daily R1=Y"
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=Y, Above pivot=Y, Above prev-day high=Y, Above Daily R1=Y, Above ATM strike (9:15)=n"
       },
       "sell": {
-        "count": 0,
+        "count": 1,
         "total": 7,
-        "detail": "Below Weekly CPR=n, Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n"
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n, Below ATM strike (9:15)=Y"
       },
       "levels": {
         "openRangeClose": 242942.0,
@@ -150,13 +144,10 @@
         "dailyCPR_bc": 239846.0,
         "dailyCPR_width": 594.0,
         "dailyCPR_width_pct": 0.25,
-        "nextDayCPR_tc": 242856.33,
-        "nextDayCPR_pivot": 242782.67,
-        "nextDayCPR_bc": 242709.0,
-        "nextDayCPR_width_pct": 0.06
+        "priceAt915": 242504.0,
+        "atmStrike915": 243000.0
       },
       "isNarrowCPR": true,
-      "isNextDayCPRNarrow": true,
       "optionLevels": {
         "expiry": "2026-09-24",
         "spot": 232099.0,
@@ -175,14 +166,14 @@
       "last_bar_time": "2026-09-08T10:15:00",
       "signal": "NONE",
       "buy": {
-        "count": 0,
+        "count": 1,
         "total": 7,
-        "detail": "Above Weekly CPR=n, Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n"
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=Y"
       },
       "sell": {
         "count": 1,
         "total": 7,
-        "detail": "Below Weekly CPR=n, Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=Y, Below prev-day low=n, Below Daily S1=n"
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=Y, Below prev-day low=n, Below Daily S1=n, Below ATM strike (9:15)=n"
       },
       "levels": {
         "openRangeClose": 280.2,
@@ -203,13 +194,10 @@
         "dailyCPR_bc": 280.15,
         "dailyCPR_width": 0.9,
         "dailyCPR_width_pct": 0.32,
-        "nextDayCPR_tc": 280.23,
-        "nextDayCPR_pivot": 280.17,
-        "nextDayCPR_bc": 280.1,
-        "nextDayCPR_width_pct": 0.05
+        "priceAt915": 279.9,
+        "atmStrike915": 280.0
       },
       "isNarrowCPR": true,
-      "isNextDayCPRNarrow": true,
       "optionLevels": {
         "expiry": "2026-09-23",
         "spot": 281.1,
