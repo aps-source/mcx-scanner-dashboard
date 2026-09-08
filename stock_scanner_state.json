@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T12:31:02.394210",
+  "generated_at": "2026-09-08T12:46:02.895347",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -12,8 +12,8 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/crude-oil-mini-chart/",
       "error": null,
-      "ltp": 8893.0,
-      "last_bar_time": "2026-09-08T12:15:00",
+      "ltp": 8904.0,
+      "last_bar_time": "2026-09-08T12:30:00",
       "signal": "CALL",
       "buy": {
         "count": 7,
@@ -32,7 +32,7 @@
         "s1": 8628.67,
         "prevDayHigh": 8804.0,
         "prevDayLow": 8580.0,
-        "ema15_5": 8869.32,
+        "ema15_5": 8880.88,
         "monthlyCPR_tc": 7988.17,
         "monthlyCPR_pivot": 7838.33,
         "monthlyCPR_bc": 7688.5,
@@ -62,8 +62,8 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/gold-mini-chart/",
       "error": null,
-      "ltp": 153201.0,
-      "last_bar_time": "2026-09-08T12:15:00",
+      "ltp": 153218.0,
+      "last_bar_time": "2026-09-08T12:30:00",
       "signal": "NONE",
       "buy": {
         "count": 1,
@@ -82,7 +82,7 @@
         "s1": 152192.67,
         "prevDayHigh": 153436.0,
         "prevDayLow": 152010.0,
-        "ema15_5": 153352.34,
+        "ema15_5": 153307.56,
         "monthlyCPR_tc": 154295.33,
         "monthlyCPR_pivot": 153982.67,
         "monthlyCPR_bc": 153670.0,
@@ -112,8 +112,8 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/silver-mini-chart/",
       "error": null,
-      "ltp": 240799.0,
-      "last_bar_time": "2026-09-08T12:15:00",
+      "ltp": 241175.0,
+      "last_bar_time": "2026-09-08T12:30:00",
       "signal": "NONE",
       "buy": {
         "count": 1,
@@ -132,7 +132,7 @@
         "s1": 238665.0,
         "prevDayHigh": 241621.0,
         "prevDayLow": 238071.0,
-        "ema15_5": 241210.63,
+        "ema15_5": 241198.75,
         "monthlyCPR_tc": 241470.83,
         "monthlyCPR_pivot": 240591.67,
         "monthlyCPR_bc": 239712.5,
@@ -162,13 +162,13 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/natural-gas-mini-chart/",
       "error": null,
-      "ltp": 280.9,
-      "last_bar_time": "2026-09-08T12:15:00",
+      "ltp": 281.8,
+      "last_bar_time": "2026-09-08T12:30:00",
       "signal": "NONE",
       "buy": {
-        "count": 3,
+        "count": 4,
         "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=Y, 15m EMA stack=n, Above pivot=Y, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=Y"
+        "detail": "Daily EMA stack=n, 60m EMA stack=Y, 15m EMA stack=Y, Above pivot=Y, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=Y"
       },
       "sell": {
         "count": 0,
@@ -182,7 +182,7 @@
         "s1": 277.4,
         "prevDayHigh": 283.8,
         "prevDayLow": 276.5,
-        "ema15_5": 280.61,
+        "ema15_5": 281.01,
         "monthlyCPR_tc": 276.8,
         "monthlyCPR_pivot": 274.1,
         "monthlyCPR_bc": 271.4,
