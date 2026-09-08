@@ -125,12 +125,13 @@
     display: flex;
     gap: 8px;
   }
-  #category-filters {
+  #symbol-filters, #category-filters {
     padding: 0 24px 18px;
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
   }
+  .filter-btn[data-symbol].active { color: var(--cat-mcx); border-color: var(--cat-mcx); background: color-mix(in srgb, var(--cat-mcx) 14%, transparent); }
   #narrow-toggle.active {
     color: var(--accent);
     border-color: var(--accent);
@@ -347,6 +348,14 @@
     <button class="filter-btn" data-filter="NONE">No signal (<span id="n-none">0</span>)</button>
   </div>
 
+  <div id="symbol-filters">
+    <button class="filter-btn active" data-symbol="ALL">All symbols</button>
+    <button class="filter-btn" data-symbol="CRUDEOILM">CRUDEOILM</button>
+    <button class="filter-btn" data-symbol="GOLDM">GOLDM</button>
+    <button class="filter-btn" data-symbol="SILVERM">SILVERM</button>
+    <button class="filter-btn" data-symbol="NATGASMINI">NATGASMINI</button>
+  </div>
+
   <div id="category-filters">
     <button class="filter-btn" id="narrow-toggle" data-narrow="0">Today's CPR Narrow only</button>
   </div>
@@ -372,6 +381,7 @@ const LS_KEY = "mcx_scanner_mwd_counters_v1";
 
 let currentFilter = "ALL";
 let currentCategory = "ALL";
+let currentSymbolGroup = "ALL";
 let narrowOnly = false;
 let lastData = null;
 
@@ -577,6 +587,11 @@ function render(data) {
   if (currentCategory !== "ALL") {
     filtered = filtered.filter(s => s.category === currentCategory);
   }
+  if (currentSymbolGroup !== "ALL") {
+    // matches the futures entry itself ("CRUDEOILM") plus its own ATM
+    // option contracts ("CRUDEOILM 8800 CALL" / "CRUDEOILM 8800 PUT")
+    filtered = filtered.filter(s => s.symbol === currentSymbolGroup || s.symbol.startsWith(currentSymbolGroup + " "));
+  }
   if (narrowOnly) {
     filtered = filtered.filter(s => s.isNarrowCPR === true);
   }
@@ -644,6 +659,15 @@ document.querySelectorAll("#category-filters .filter-btn[data-category]").forEac
     document.querySelectorAll("#category-filters .filter-btn[data-category]").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
     currentCategory = btn.dataset.category;
+    render(lastData);
+  });
+});
+
+document.querySelectorAll("#symbol-filters .filter-btn[data-symbol]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll("#symbol-filters .filter-btn[data-symbol]").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    currentSymbolGroup = btn.dataset.symbol;
     render(lastData);
   });
 });
