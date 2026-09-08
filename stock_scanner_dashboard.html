@@ -181,13 +181,6 @@
   .view-tab:hover { color: var(--text-primary); }
   .view-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
   .view-panel[hidden] { display: none; }
-  #atm-table-wrap {
-    margin: 0 24px 22px;
-    background: var(--surface-1);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 14px 16px 6px;
-  }
   .atm-table-title {
     font-family: var(--font-display);
     font-size: 13.5px;
@@ -197,31 +190,6 @@
     color: var(--accent);
     margin-bottom: 10px;
   }
-  #atm-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: var(--font-mono);
-    font-size: 14.5px;
-  }
-  #atm-table th {
-    text-align: left;
-    font-family: var(--font-body);
-    font-size: 12.5px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--text-muted);
-    padding: 0 10px 8px;
-    border-bottom: 1px solid var(--border);
-  }
-  #atm-table td {
-    padding: 9px 10px;
-    border-bottom: 1px dashed var(--gridline);
-    color: var(--text-secondary);
-  }
-  #atm-table tr:last-child td { border-bottom: none; }
-  #atm-table td.symbol-cell { font-family: var(--font-display); font-weight: 800; color: var(--text-primary); }
-  #atm-table td.price-cell { font-weight: 700; color: var(--text-primary); }
   .vs-atm-chip {
     display: inline-flex;
     align-items: center;
@@ -235,7 +203,7 @@
   }
   .vs-atm-chip.above { background: var(--good-soft); color: var(--good); }
   .vs-atm-chip.below { background: var(--critical-soft); color: var(--critical); }
-  #grid {
+  #grid, #atm-grid {
     padding: 0 24px 32px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
@@ -380,15 +348,8 @@
 </div>
 
 <div id="view-atm" class="view-panel" hidden>
-  <div id="atm-table-wrap">
-    <div class="atm-table-title">ATM Strike Reference (fixed at 9:15 session open)</div>
-    <table id="atm-table">
-      <thead>
-        <tr><th>Symbol</th><th>ATM Strike (9:15)</th><th>Current Price</th><th>Price vs ATM</th></tr>
-      </thead>
-      <tbody id="atm-table-body"></tbody>
-    </table>
-  </div>
+  <div class="atm-table-title" style="padding:0 24px 14px;">ATM Strike Reference (fixed at 9:15 session open) &middot; one card per symbol</div>
+  <div id="atm-grid"></div>
 </div>
 
 <footer>
@@ -597,21 +558,33 @@ function render(data) {
   });
 
   document.getElementById("grid").innerHTML = filtered.map(s => card(s, data.meta)).join("");
-  document.getElementById("atm-table-body").innerHTML = stocks.filter(s => !s.error).map(atmTableRow).join("");
+  document.getElementById("atm-grid").innerHTML = stocks.map(atmCard).join("");
 }
 
-function atmTableRow(stock) {
+function atmCard(stock) {
+  if (stock.error) {
+    return `<div class="card card-ERR"><div class="card-top"><div class="symbol-row"><span class="symbol">${stock.symbol}</span>${chartLink(stock)}</div></div>
+      ${catChip(stock.category)}
+      <div class="err-card">${stock.error}</div></div>`;
+  }
+
   const atm = stock.levels.atmStrike915;
   if (atm == null) {
-    return `<tr><td class="symbol-cell">${stock.symbol}</td><td colspan="3" style="color:var(--text-muted)">not available yet</td></tr>`;
+    return `<div class="card"><div class="card-top"><div class="symbol-row"><span class="symbol">${stock.symbol}</span>${chartLink(stock)}</div></div>
+      ${catChip(stock.category)}
+      <div class="err-card" style="color:var(--text-muted)">ATM strike not available yet</div></div>`;
   }
+
   const above = stock.ltp > atm;
-  return `<tr>
-    <td class="symbol-cell">${stock.symbol}</td>
-    <td>${atm.toLocaleString("en-IN")}</td>
-    <td class="price-cell">₹${stock.ltp.toLocaleString("en-IN")}</td>
-    <td><span class="vs-atm-chip ${above ? "above" : "below"}">${above ? "▲ Above" : "▼ Below"}</span></td>
-  </tr>`;
+  return `<div class="card">
+    <div class="card-top">
+      <div><div class="symbol-row"><span class="symbol">${stock.symbol}</span>${chartLink(stock)}</div><div class="ltp">₹${stock.ltp.toLocaleString("en-IN")}</div></div>
+      <span class="vs-atm-chip ${above ? "above" : "below"}">${above ? "▲ Above" : "▼ Below"}</span>
+    </div>
+    ${catChip(stock.category)}
+    <div class="ltp" style="margin-bottom:6px;">ATM Strike (9:15): <b>${atm.toLocaleString("en-IN")}</b></div>
+    ${atmDetailsTable(stock.optionLevels, stock.signal)}
+  </div>`;
 }
 
 async function refresh() {
