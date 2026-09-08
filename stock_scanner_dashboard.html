@@ -340,7 +340,7 @@ function critRow(label, met, dir) {
 }
 
 function parseDetail(detail) {
-  // "Above Weekly CPR=Y, Daily EMA stack=n, ..." -> [[label, bool], ...]
+  // "Daily EMA stack=Y, 60m EMA stack=n, ..." -> [[label, bool], ...]
   return detail.split(", ").map(part => {
     const idx = part.lastIndexOf("=");
     return [part.slice(0, idx), part.slice(idx + 1) === "Y"];
