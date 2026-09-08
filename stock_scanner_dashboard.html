@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>MCX Commodity Scanner (MWD)</title>
+<title>MCX Commodity Scanner</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -251,6 +251,7 @@
   .ol-dot.resistance { background: var(--critical); }
   .ol-dot.maxpain { background: var(--warning); }
   .ol-dot.support { background: var(--good); }
+  .ol-dot.atm { background: var(--accent); }
   .err-card { color: var(--critical); font-size: 14px; font-weight: 600; }
   footer { padding: 10px 24px 28px; font-size: 13px; color: var(--text-muted); }
 </style>
@@ -259,8 +260,8 @@
 
 <header>
   <div>
-    <h1>MCX Commodity Scanner <span class="brand-hi">MWD</span></h1>
-    <div class="sub">CRUDEOILM / GOLDM / SILVERM / NATGASMINI mini-futures &middot; ITM Call/Put buying signals &middot; CALL = above Weekly CPR + pivot + Daily R1 + EMA(5&gt;26&gt;50) stack on Daily/60m/15m + above prev-day high (mirrored for PUT, using S1)</div>
+    <h1>MCX Commodity Scanner</h1>
+    <div class="sub">CRUDEOILM / GOLDM / SILVERM / NATGASMINI mini-futures &middot; ITM Call/Put buying signals &middot; CALL = pivot + Daily R1 + EMA(5&gt;26&gt;50) stack on Daily/60m/15m + above prev-day high + above the 9:15 ATM strike (mirrored for PUT, using S1 and below the 9:15 ATM strike)</div>
   </div>
   <a href="signal_log.html" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:14px;font-weight:800;color:#fff;background:var(--accent);border-radius:999px;padding:8px 16px;text-decoration:none;white-space:nowrap;">Signal history &rarr;</a>
 </header>
@@ -282,7 +283,7 @@
 </div>
 
 <div id="category-filters">
-  <button class="filter-btn" id="narrow-toggle" data-narrow="0">Next-day CPR Narrow only</button>
+  <button class="filter-btn" id="narrow-toggle" data-narrow="0">Today's CPR Narrow only</button>
 </div>
 
 <div id="grid"></div>
@@ -353,10 +354,15 @@ function chartLink(stock) {
   return `<a class="chart-link" href="${stock.chart_url}" target="_blank" rel="noopener noreferrer" title="Open ${stock.symbol} chart on Dhan" onclick="event.stopPropagation()">${CHART_ICON_SVG}</a>`;
 }
 
-function optionLevelsBlock(ol) {
-  if (!ol) return "";
+function optionLevelsBlock(ol, atmStrike915) {
+  if (!ol && atmStrike915 == null) return "";
+  const atmRow = atmStrike915 != null
+    ? `<div class="ol-row" title="9:15 underlying price rounded to the nearest listed strike -- fixed for the day, gates the CALL/PUT condition"><span class="ol-dot atm"></span>ATM Strike (9:15)<b>${atmStrike915}</b></div>`
+    : "";
+  if (!ol) return `<div class="option-levels">${atmRow}</div>`;
   return `<div class="option-levels">
     <div class="ol-title">Option chain &middot; ${ol.expiry} exp &middot; spot ₹${ol.spot.toLocaleString("en-IN")}</div>
+    ${atmRow}
     <div class="ol-row" title="Strike with the highest Call OI"><span class="ol-dot resistance"></span>Resistance<b>${ol.resistanceStrike ?? "–"}</b></div>
     <div class="ol-row" title="Strike where option writers' payout is minimized"><span class="ol-dot maxpain"></span>Max Pain<b>${ol.maxPainStrike ?? "–"}</b></div>
     <div class="ol-row" title="Strike with the highest Put OI"><span class="ol-dot support"></span>Support<b>${ol.supportStrike ?? "–"}</b></div>
@@ -385,7 +391,7 @@ function card(stock, meta) {
       <span class="badge ${sig}">${sig === "NONE" ? "NO SIGNAL" : sig}</span>
     </div>
     ${catChip(stock.category)}
-    ${optionLevelsBlock(stock.optionLevels)}
+    ${optionLevelsBlock(stock.optionLevels, lvl.atmStrike915)}
     <div class="side-label">${sig === "PUT" ? "Put criteria" : "Call criteria"} (${sideConds.count}/${sideConds.total})</div>
     ${rows}
     <div class="info-row ${stock.isNarrowCPR ? "on" : "off"}"><span class="mark">${stock.isNarrowCPR ? "✓" : "·"}</span>Narrow CPR (trending bias)</div>
@@ -407,7 +413,7 @@ function card(stock, meta) {
         <span>Weekly CPR TC/P/BC ${lvl.weeklyCPR_tc ?? "–"}/${lvl.weeklyCPR_pivot ?? "–"}/${lvl.weeklyCPR_bc ?? "–"}</span>
       </div>
     </div>
-    <div class="info-note">ℹ Next-day CPR (info only, not a filter): ${lvl.nextDayCPR_width_pct != null ? lvl.nextDayCPR_width_pct + "%" : "–"}</div>
+    <div class="info-note">ℹ Today's CPR (info only, not a filter) TC/P/BC: ${lvl.dailyCPR_tc ?? "–"}/${lvl.dailyCPR_pivot ?? "–"}/${lvl.dailyCPR_bc ?? "–"} &middot; width ${lvl.dailyCPR_width_pct != null ? lvl.dailyCPR_width_pct + "%" : "–"}</div>
     <div class="counter-row">
       <span>Trades taken today</span>
       <div style="display:flex;align-items:center;gap:8px;">
@@ -461,7 +467,7 @@ function render(data) {
     filtered = filtered.filter(s => s.category === currentCategory);
   }
   if (narrowOnly) {
-    filtered = filtered.filter(s => s.isNextDayCPRNarrow === true);
+    filtered = filtered.filter(s => s.isNarrowCPR === true);
   }
   // signals first (CALL/PUT), then NONE, errors last
   const rank = { CALL: 0, PUT: 0, NONE: 1 };
