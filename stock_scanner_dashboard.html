@@ -298,6 +298,10 @@
   .info-row.off .mark { color: var(--text-muted); }
   .info-row.off { color: var(--text-muted); }
   .info-note { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); padding: 2px 0; font-style: italic; }
+  .confirm-note { font-size: 12.5px; padding: 7px 10px; border-radius: 8px; margin: 8px 0 2px; line-height: 1.4; }
+  .confirm-note.on { background: var(--good-soft); color: var(--good); }
+  .confirm-note.off { background: var(--neutral-bg); color: var(--neutral-text); }
+  .confirm-note b { font-weight: 800; }
   .option-levels { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 2px solid var(--gridline); background: var(--surface-2); border-radius: 9px; padding: 9px 11px 10px; margin-top: -2px; }
   .ol-title { font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); margin-bottom: 6px; }
   .ol-row { display: flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 17.5px; font-weight: 600; color: var(--text-secondary); padding: 2px 0; }
@@ -436,6 +440,21 @@ function optionLevelsBlock(ol, atmStrike915) {
   </div>`;
 }
 
+function confirmationNote(stock) {
+  if (stock.category !== "MCX" || !stock.confirmation) return "";
+  const u = stock.underlyingSignal;
+  const c = stock.confirmation;
+  if (u === "NONE" || u == null) {
+    return `<div class="confirm-note off">Underlying shows no signal on its own conditions -- ATM option confirmation not applicable.</div>`;
+  }
+  const optSignal = u === "CALL" ? c.call : c.put;
+  const confirmed = optSignal === u;
+  const label = u === "CALL" ? "ATM Call" : "ATM Put";
+  return `<div class="confirm-note ${confirmed ? "on" : "off"}">
+    Underlying meets all ${u} conditions on its own &middot; ${label} option ${confirmed ? `also confirms ${u} <b>&rarr; Signal ${u}</b>` : `does NOT confirm (shows ${optSignal ?? "–"}) <b>&rarr; No signal</b>`}
+  </div>`;
+}
+
 function atmDetailsTable(ol, sig) {
   const d = ol && ol.atmDetails;
   if (!d) return "";
@@ -460,8 +479,16 @@ function card(stock, meta) {
   }
 
   const sig = stock.signal;
-  const dir = sig === "PUT" ? "put" : "call";
-  const sideConds = sig === "PUT" ? stock.sell : stock.buy;
+  // For MCX futures, `signal` is the CONFIRMED (post-AND-gate) value, which
+  // can be NONE even when the underlying's own conditions favor a side --
+  // show the criteria breakdown for whichever side the underlying itself
+  // leans toward (`underlyingSignal`), not the possibly-downgraded `sig`,
+  // so the checklist doesn't silently flip to the wrong side. Option
+  // contracts (and error cards) have no underlyingSignal and fall back to
+  // `sig`, unchanged from before.
+  const criteriaSide = stock.underlyingSignal ?? sig;
+  const dir = criteriaSide === "PUT" ? "put" : "call";
+  const sideConds = criteriaSide === "PUT" ? stock.sell : stock.buy;
   const rows = parseDetail(sideConds.detail).map(([label, met]) => critRow(label, met, dir)).join("");
   const count = counterState.counts[stock.symbol] || 0;
   const over = count >= meta.max_trades_per_day;
@@ -474,8 +501,9 @@ function card(stock, meta) {
     </div>
     ${catChip(stock.category)}
     ${optionLevelsBlock(stock.optionLevels, stock.category === "MCX" ? lvl.atmStrike915 : null)}
-    <div class="side-label">${sig === "PUT" ? "Put criteria" : "Call criteria"} (${sideConds.count}/${sideConds.total})</div>
+    <div class="side-label">${criteriaSide === "PUT" ? "Put criteria" : "Call criteria"} (${sideConds.count}/${sideConds.total})</div>
     ${rows}
+    ${confirmationNote(stock)}
     ${atmDetailsTable(stock.optionLevels, sig)}
     <div class="info-row ${stock.isNarrowCPR ? "on" : "off"}"><span class="mark">${stock.isNarrowCPR ? "✓" : "·"}</span>Narrow CPR (trending bias)</div>
     <div class="levels">
