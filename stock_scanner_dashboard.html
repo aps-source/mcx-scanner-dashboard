@@ -35,6 +35,7 @@
     --cat-equity:     #2563eb;
     --cat-index:      #db2777;
     --cat-mcx:        #ca8a04;
+    --cat-option:     #0d9488;
 
     --font-display: "Sora", "Manrope", -apple-system, "Segoe UI", sans-serif;
     --font-body:    "Manrope", -apple-system, "Segoe UI", sans-serif;
@@ -68,6 +69,7 @@
       --cat-equity:     #60a5fa;
       --cat-index:      #f472b6;
       --cat-mcx:        #fbbf24;
+      --cat-option:     #2dd4bf;
     }
   }
   * { box-sizing: border-box; }
@@ -117,6 +119,7 @@
   .dot-equity  { background: var(--cat-equity); }
   .dot-index   { background: var(--cat-index); }
   .dot-mcx     { background: var(--cat-mcx); }
+  .dot-option  { background: var(--cat-option); }
   #filters {
     padding: 0 24px 10px;
     display: flex;
@@ -368,8 +371,8 @@ let currentCategory = "ALL";
 let narrowOnly = false;
 let lastData = null;
 
-const CAT_CLASS = { EQUITY: "equity", INDEX: "index", MCX: "mcx" };
-const CAT_LABEL = { EQUITY: "EQUITY", INDEX: "INDEX", MCX: "MCX" };
+const CAT_CLASS = { EQUITY: "equity", INDEX: "index", MCX: "mcx", MCX_OPTION: "option" };
+const CAT_LABEL = { EQUITY: "EQUITY", INDEX: "INDEX", MCX: "MCX", MCX_OPTION: "MCX OPTION" };
 
 function catChip(category) {
   const cls = CAT_CLASS[category] || "equity";
@@ -470,7 +473,7 @@ function card(stock, meta) {
       <span class="badge ${sig}">${sig === "NONE" ? "NO SIGNAL" : sig}</span>
     </div>
     ${catChip(stock.category)}
-    ${optionLevelsBlock(stock.optionLevels, lvl.atmStrike915)}
+    ${optionLevelsBlock(stock.optionLevels, stock.category === "MCX" ? lvl.atmStrike915 : null)}
     <div class="side-label">${sig === "PUT" ? "Put criteria" : "Call criteria"} (${sideConds.count}/${sideConds.total})</div>
     ${rows}
     ${atmDetailsTable(stock.optionLevels, sig)}
@@ -558,7 +561,7 @@ function render(data) {
   });
 
   document.getElementById("grid").innerHTML = filtered.map(s => card(s, data.meta)).join("");
-  document.getElementById("atm-grid").innerHTML = stocks.map(atmCard).join("");
+  document.getElementById("atm-grid").innerHTML = stocks.filter(s => s.category === "MCX").map(atmCard).join("");
 }
 
 function atmCard(stock) {
