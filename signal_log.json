@@ -3819,5 +3819,18 @@
       "GOLDM 153000 PUT",
       "NATGASMINI 275 CALL"
     ]
+  },
+  {
+    "generated_at": "2026-09-18T15:10:02.704590",
+    "date": "2026-09-18",
+    "time": "15:10",
+    "call": 0,
+    "put": 1,
+    "none": 11,
+    "err": 0,
+    "call_symbols": [],
+    "put_symbols": [
+      "NATGASMINI 275 CALL"
+    ]
   }
 ]
