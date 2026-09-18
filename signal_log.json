@@ -3592,5 +3592,16 @@
     "put_symbols": [
       "NATGASMINI 275 CALL"
     ]
+  },
+  {
+    "generated_at": "2026-09-18T10:40:03.746067",
+    "date": "2026-09-18",
+    "time": "10:40",
+    "call": 0,
+    "put": 0,
+    "none": 11,
+    "err": 1,
+    "call_symbols": [],
+    "put_symbols": []
   }
 ]
