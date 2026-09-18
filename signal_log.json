@@ -3516,5 +3516,18 @@
     "err": 4,
     "call_symbols": [],
     "put_symbols": []
+  },
+  {
+    "generated_at": "2026-09-18T09:10:13.748975",
+    "date": "2026-09-18",
+    "time": "09:10",
+    "call": 0,
+    "put": 1,
+    "none": 11,
+    "err": 0,
+    "call_symbols": [],
+    "put_symbols": [
+      "SILVERM 235000 PUT"
+    ]
   }
 ]
