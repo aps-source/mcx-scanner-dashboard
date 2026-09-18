@@ -3743,5 +3743,16 @@
       "CRUDEOILM 9650 CALL",
       "NATGASMINI 275 CALL"
     ]
+  },
+  {
+    "generated_at": "2026-09-18T13:40:02.633471",
+    "date": "2026-09-18",
+    "time": "13:40",
+    "call": 0,
+    "put": 0,
+    "none": 11,
+    "err": 1,
+    "call_symbols": [],
+    "put_symbols": []
   }
 ]
