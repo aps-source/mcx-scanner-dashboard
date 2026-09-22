@@ -4367,5 +4367,19 @@
       "GOLDM 153500 CALL",
       "SILVERM 242000 CALL"
     ]
+  },
+  {
+    "generated_at": "2026-09-22T13:25:01.850973",
+    "date": "2026-09-22",
+    "time": "13:25",
+    "call": 0,
+    "put": 2,
+    "none": 10,
+    "err": 0,
+    "call_symbols": [],
+    "put_symbols": [
+      "GOLDM 153500 CALL",
+      "SILVERM 242000 CALL"
+    ]
   }
 ]
