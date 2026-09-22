@@ -4458,5 +4458,16 @@
     "put_symbols": [
       "GOLDM 153500 CALL"
     ]
+  },
+  {
+    "generated_at": "2026-09-22T15:25:01.835868",
+    "date": "2026-09-22",
+    "time": "15:25",
+    "call": 0,
+    "put": 0,
+    "none": 12,
+    "err": 0,
+    "call_symbols": [],
+    "put_symbols": []
   }
 ]
