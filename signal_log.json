@@ -4995,5 +4995,20 @@
     "put_symbols": [
       "NATGASMINI 290 PUT"
     ]
+  },
+  {
+    "generated_at": "2026-09-23T17:10:02.673471",
+    "date": "2026-09-23",
+    "time": "17:10",
+    "call": 0,
+    "put": 3,
+    "none": 9,
+    "err": 0,
+    "call_symbols": [],
+    "put_symbols": [
+      "GOLDM 152500 CALL",
+      "SILVERM 242000 CALL",
+      "NATGASMINI 290 PUT"
+    ]
   }
 ]
