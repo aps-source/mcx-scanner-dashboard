@@ -5024,5 +5024,20 @@
       "GOLDM 152500 CALL",
       "SILVERM 242000 CALL"
     ]
+  },
+  {
+    "generated_at": "2026-09-23T17:40:03.403407",
+    "date": "2026-09-23",
+    "time": "17:40",
+    "call": 0,
+    "put": 3,
+    "none": 9,
+    "err": 0,
+    "call_symbols": [],
+    "put_symbols": [
+      "GOLDM 152500 CALL",
+      "SILVERM 242000 CALL",
+      "NATGASMINI 290 PUT"
+    ]
   }
 ]
