@@ -5133,5 +5133,16 @@
     "put_symbols": [
       "SILVERM 242000 CALL"
     ]
+  },
+  {
+    "generated_at": "2026-09-24T09:25:05.434897",
+    "date": "2026-09-24",
+    "time": "09:25",
+    "call": 0,
+    "put": 0,
+    "none": 6,
+    "err": 0,
+    "call_symbols": [],
+    "put_symbols": []
   }
 ]
