@@ -5495,5 +5495,22 @@
     "put_symbols": [
       "SILVERM 236000 CALL"
     ]
+  },
+  {
+    "generated_at": "2026-09-25T09:10:01.808907",
+    "date": "2026-09-25",
+    "time": "09:10",
+    "call": 1,
+    "put": 3,
+    "none": 7,
+    "err": 1,
+    "call_symbols": [
+      "CRUDEOILM 9400 CALL"
+    ],
+    "put_symbols": [
+      "CRUDEOILM 9400 PUT",
+      "GOLDM 151000 CALL",
+      "NATGASMINI 290 PUT"
+    ]
   }
 ]
