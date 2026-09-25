@@ -5512,5 +5512,16 @@
       "GOLDM 151000 CALL",
       "NATGASMINI 290 PUT"
     ]
+  },
+  {
+    "generated_at": "2026-09-25T09:25:02.356481",
+    "date": "2026-09-25",
+    "time": "09:25",
+    "call": 0,
+    "put": 0,
+    "none": 6,
+    "err": 0,
+    "call_symbols": [],
+    "put_symbols": []
   }
 ]
