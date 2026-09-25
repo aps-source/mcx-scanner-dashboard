@@ -5701,5 +5701,18 @@
     "put_symbols": [
       "GOLDM 151000 PUT"
     ]
+  },
+  {
+    "generated_at": "2026-09-25T23:10:02.669064",
+    "date": "2026-09-25",
+    "time": "23:10",
+    "call": 0,
+    "put": 1,
+    "none": 11,
+    "err": 0,
+    "call_symbols": [],
+    "put_symbols": [
+      "GOLDM 151000 PUT"
+    ]
   }
 ]
