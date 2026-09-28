@@ -5728,5 +5728,16 @@
       "GOLDM 151000 CALL",
       "GOLDM 151000 PUT"
     ]
+  },
+  {
+    "generated_at": "2026-09-28T09:10:02.701928",
+    "date": "2026-09-28",
+    "time": "09:10",
+    "call": 0,
+    "put": 0,
+    "none": 12,
+    "err": 0,
+    "call_symbols": [],
+    "put_symbols": []
   }
 ]
