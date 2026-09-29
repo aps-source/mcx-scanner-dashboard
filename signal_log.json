@@ -6086,5 +6086,18 @@
     "err": 0,
     "call_symbols": [],
     "put_symbols": []
+  },
+  {
+    "generated_at": "2026-09-29T09:10:05.629751",
+    "date": "2026-09-29",
+    "time": "09:10",
+    "call": 0,
+    "put": 1,
+    "none": 11,
+    "err": 0,
+    "call_symbols": [],
+    "put_symbols": [
+      "GOLDM 148000 CALL"
+    ]
   }
 ]
