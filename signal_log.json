@@ -6431,5 +6431,16 @@
       "NATGASMINI 305 PUT"
     ],
     "put_symbols": []
+  },
+  {
+    "generated_at": "2026-09-30T09:25:02.392225",
+    "date": "2026-09-30",
+    "time": "09:25",
+    "call": 0,
+    "put": 0,
+    "none": 8,
+    "err": 0,
+    "call_symbols": [],
+    "put_symbols": []
   }
 ]
