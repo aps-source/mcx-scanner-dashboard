@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T11:01:08.076699",
+  "generated_at": "2026-10-01T11:10:01.866376",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -105,18 +105,18 @@
         "supportStrike": 140000.0,
         "atmDetails": {
           "strike": 147000.0,
-          "ce_ltp": 4333.5,
-          "ce_oi": 917.0,
-          "ce_iv": 20.56,
-          "ce_volume": 748.0,
-          "ce_bid": 4316.5,
-          "ce_ask": 4330.0,
-          "pe_ltp": 2099.5,
-          "pe_oi": 1130.0,
-          "pe_iv": 17.64,
-          "pe_volume": 1496.0,
-          "pe_bid": 2097.5,
-          "pe_ask": 2105.5
+          "ce_ltp": 4389.5,
+          "ce_oi": 881.0,
+          "ce_iv": 20.91,
+          "ce_volume": 855.0,
+          "ce_bid": 4380.0,
+          "ce_ask": 4395.0,
+          "pe_ltp": 2056.5,
+          "pe_oi": 1104.0,
+          "pe_iv": 17.37,
+          "pe_volume": 1608.0,
+          "pe_bid": 2046.0,
+          "pe_ask": 2057.0
         }
       },
       "underlyingSignal": "NONE",
@@ -175,18 +175,18 @@
         "supportStrike": 200000.0,
         "atmDetails": {
           "strike": 228000.0,
-          "ce_ltp": 7155.5,
-          "ce_oi": 536.0,
-          "ce_iv": 39.51,
-          "ce_volume": 906.0,
-          "ce_bid": 7137.5,
-          "ce_ask": 7181.5,
-          "pe_ltp": 6301.0,
-          "pe_oi": 461.0,
-          "pe_iv": 12.38,
-          "pe_volume": 582.0,
-          "pe_bid": 6310.0,
-          "pe_ask": 6332.5
+          "ce_ltp": 7094.0,
+          "ce_oi": 526.0,
+          "ce_iv": 39.25,
+          "ce_volume": 978.0,
+          "ce_bid": 7084.5,
+          "ce_ask": 7125.5,
+          "pe_ltp": 6421.0,
+          "pe_oi": 467.0,
+          "pe_iv": 13.0,
+          "pe_volume": 617.0,
+          "pe_bid": 6378.5,
+          "pe_ask": 6419.0
         }
       },
       "underlyingSignal": "NONE",
