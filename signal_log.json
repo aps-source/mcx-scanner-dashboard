@@ -8021,5 +8021,18 @@
     "put_symbols": [
       "GOLDM 147000 CALL"
     ]
+  },
+  {
+    "generated_at": "2026-10-05T22:25:02.144540",
+    "date": "2026-10-05",
+    "time": "22:25",
+    "call": 0,
+    "put": 1,
+    "none": 8,
+    "err": 1,
+    "call_symbols": [],
+    "put_symbols": [
+      "GOLDM 147000 CALL"
+    ]
   }
 ]
