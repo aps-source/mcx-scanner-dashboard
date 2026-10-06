@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T15:40:03.596461",
+  "generated_at": "2026-10-06T15:55:03.301334",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -69,8 +69,8 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/silver-mini-chart/",
       "error": null,
-      "ltp": 228444.0,
-      "last_bar_time": "2026-10-06T15:15:00",
+      "ltp": 228430.0,
+      "last_bar_time": "2026-10-06T15:30:00",
       "signal": "NONE",
       "buy": {
         "count": 1,
@@ -89,7 +89,7 @@
         "s1": 227127.33,
         "prevDayHigh": 230700.0,
         "prevDayLow": 227745.0,
-        "ema15_5": 228499.24,
+        "ema15_5": 228476.16,
         "monthlyCPR_tc": 236092.5,
         "monthlyCPR_pivot": 232735.0,
         "monthlyCPR_bc": 229377.5,
@@ -113,18 +113,18 @@
         "supportStrike": 200000.0,
         "atmDetails": {
           "strike": 228000.0,
-          "ce_ltp": 6098.5,
-          "ce_oi": 708.0,
-          "ce_iv": 36.94,
-          "ce_volume": 2556.0,
-          "ce_bid": 6136.0,
-          "ce_ask": 6166.5,
-          "pe_ltp": 5800.0,
-          "pe_oi": 616.0,
-          "pe_iv": 14.96,
-          "pe_volume": 2028.0,
-          "pe_bid": 5765.0,
-          "pe_ask": 5798.0
+          "ce_ltp": 6195.5,
+          "ce_oi": 683.0,
+          "ce_iv": 37.4,
+          "ce_volume": 2745.0,
+          "ce_bid": 6195.5,
+          "ce_ask": 6221.5,
+          "pe_ltp": 5686.0,
+          "pe_oi": 654.0,
+          "pe_iv": 14.36,
+          "pe_volume": 2225.0,
+          "pe_bid": 5681.5,
+          "pe_ask": 5710.0
         }
       },
       "underlyingSignal": "NONE",
@@ -147,8 +147,8 @@
       "category": "MCX_OPTION",
       "chart_url": null,
       "error": null,
-      "ltp": 3586.0,
-      "last_bar_time": "2026-10-06T15:15:00",
+      "ltp": 3590.0,
+      "last_bar_time": "2026-10-06T15:30:00",
       "signal": "NONE",
       "buy": {
         "count": 1,
@@ -167,7 +167,7 @@
         "s1": 3068.67,
         "prevDayHigh": 4180.0,
         "prevDayLow": 3259.5,
-        "ema15_5": 3617.49,
+        "ema15_5": 3608.33,
         "monthlyCPR_tc": 5505.75,
         "monthlyCPR_pivot": 4887.0,
         "monthlyCPR_bc": 4268.25,
@@ -190,8 +190,8 @@
       "category": "MCX_OPTION",
       "chart_url": null,
       "error": null,
-      "ltp": 2022.5,
-      "last_bar_time": "2026-10-06T15:15:00",
+      "ltp": 2033.0,
+      "last_bar_time": "2026-10-06T15:30:00",
       "signal": "NONE",
       "buy": {
         "count": 0,
@@ -199,9 +199,9 @@
         "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n, Above own 9:15 open=n"
       },
       "sell": {
-        "count": 5,
+        "count": 4,
         "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=Y, 15m EMA stack=Y, Below pivot=Y, Below prev-day low=Y, Below Daily S1=n, Below own 9:15 open=Y"
+        "detail": "Daily EMA stack=n, 60m EMA stack=Y, 15m EMA stack=n, Below pivot=Y, Below prev-day low=Y, Below Daily S1=n, Below own 9:15 open=Y"
       },
       "levels": {
         "openRangeClose": 2294.0,
@@ -210,7 +210,7 @@
         "s1": 2011.0,
         "prevDayHigh": 2652.0,
         "prevDayLow": 2047.5,
-        "ema15_5": 2024.61,
+        "ema15_5": 2027.41,
         "monthlyCPR_tc": 2504.17,
         "monthlyCPR_pivot": 2385.83,
         "monthlyCPR_bc": 2267.5,
@@ -233,8 +233,8 @@
       "category": "MCX_OPTION",
       "chart_url": null,
       "error": null,
-      "ltp": 6191.0,
-      "last_bar_time": "2026-10-06T15:15:00",
+      "ltp": 6195.0,
+      "last_bar_time": "2026-10-06T15:30:00",
       "signal": "NONE",
       "buy": {
         "count": 1,
@@ -253,7 +253,7 @@
         "s1": 5387.0,
         "prevDayHigh": 7800.0,
         "prevDayLow": 5920.5,
-        "ema15_5": 6258.63,
+        "ema15_5": 6237.42,
         "monthlyCPR_tc": 5884.5,
         "monthlyCPR_pivot": 5723.5,
         "monthlyCPR_bc": 5562.5,
@@ -276,8 +276,8 @@
       "category": "MCX_OPTION",
       "chart_url": null,
       "error": null,
-      "ltp": 5677.0,
-      "last_bar_time": "2026-10-06T15:15:00",
+      "ltp": 5722.0,
+      "last_bar_time": "2026-10-06T15:30:00",
       "signal": "NONE",
       "buy": {
         "count": 0,
@@ -285,9 +285,9 @@
         "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n, Above own 9:15 open=n"
       },
       "sell": {
-        "count": 4,
+        "count": 3,
         "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=Y, 15m EMA stack=Y, Below pivot=Y, Below prev-day low=n, Below Daily S1=n, Below own 9:15 open=Y"
+        "detail": "Daily EMA stack=n, 60m EMA stack=Y, 15m EMA stack=n, Below pivot=Y, Below prev-day low=n, Below Daily S1=n, Below own 9:15 open=Y"
       },
       "levels": {
         "openRangeClose": 6002.5,
@@ -296,7 +296,7 @@
         "s1": 5061.17,
         "prevDayHigh": 6546.5,
         "prevDayLow": 5154.0,
-        "ema15_5": 5691.58,
+        "ema15_5": 5701.72,
         "monthlyCPR_tc": 7640.83,
         "monthlyCPR_pivot": 7331.67,
         "monthlyCPR_bc": 7022.5,
