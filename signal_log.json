@@ -8973,5 +8973,18 @@
     "put_symbols": [
       "SILVERM 226000 CALL"
     ]
+  },
+  {
+    "generated_at": "2026-10-08T13:55:02.532413",
+    "date": "2026-10-08",
+    "time": "13:55",
+    "call": 1,
+    "put": 0,
+    "none": 5,
+    "err": 2,
+    "call_symbols": [
+      "SILVERM 226000 PUT"
+    ],
+    "put_symbols": []
   }
 ]
