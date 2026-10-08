@@ -8769,5 +8769,18 @@
       "GOLDM 147000 CALL",
       "SILVERM 228000 CALL"
     ]
+  },
+  {
+    "generated_at": "2026-10-08T09:10:03.230486",
+    "date": "2026-10-08",
+    "time": "09:10",
+    "call": 0,
+    "put": 1,
+    "none": 5,
+    "err": 2,
+    "call_symbols": [],
+    "put_symbols": [
+      "SILVERM 228000 CALL"
+    ]
   }
 ]
