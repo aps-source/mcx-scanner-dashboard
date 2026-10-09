@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T21:24:02.087804",
+  "generated_at": "2026-10-09T21:25:06.174640",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -117,14 +117,14 @@
           "ce_oi": 360.0,
           "ce_iv": 39.29,
           "ce_volume": 6497.0,
-          "ce_bid": 6102.5,
-          "ce_ask": 6135.5,
-          "pe_ltp": 4165.5,
+          "ce_bid": 6132.0,
+          "ce_ask": 6162.5,
+          "pe_ltp": 4136.0,
           "pe_oi": 718.0,
-          "pe_iv": 8.75,
-          "pe_volume": 5987.0,
-          "pe_bid": 4145.5,
-          "pe_ask": 4165.0
+          "pe_iv": 8.53,
+          "pe_volume": 5991.0,
+          "pe_bid": 4117.5,
+          "pe_ask": 4133.0
         }
       },
       "underlyingSignal": "NONE",
