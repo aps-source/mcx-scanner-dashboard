@@ -9720,5 +9720,18 @@
     "err": 2,
     "call_symbols": [],
     "put_symbols": []
+  },
+  {
+    "generated_at": "2026-10-12T14:40:07.027999",
+    "date": "2026-10-12",
+    "time": "14:40",
+    "call": 0,
+    "put": 1,
+    "none": 5,
+    "err": 2,
+    "call_symbols": [],
+    "put_symbols": [
+      "SILVERM 228000 CALL"
+    ]
   }
 ]
