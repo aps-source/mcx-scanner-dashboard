@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T10:55:02.905735",
+  "generated_at": "2026-10-15T11:10:03.965792",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -11,7 +11,7 @@
       "security_id": "565900",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/crude-oil-mini-chart/",
-      "error": "'timestamp'",
+      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x00000207F96ED2B0>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
       "optionLevels": null
     },
     {
@@ -19,263 +19,24 @@
       "security_id": "569003",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/gold-mini-chart/",
-      "error": null,
-      "ltp": 146826.0,
-      "last_bar_time": "2026-10-05T23:15:00",
-      "signal": "NONE",
-      "buy": {
-        "count": 0,
-        "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=n"
-      },
-      "sell": {
-        "count": 5,
-        "total": 7,
-        "detail": "Daily EMA stack=Y, 60m EMA stack=Y, 15m EMA stack=Y, Below pivot=Y, Below prev-day low=n, Below Daily S1=n, Below ATM strike (9:15)=Y"
-      },
-      "levels": {
-        "openRangeClose": 146843.0,
-        "pivot": 147375.0,
-        "r1": 148200.0,
-        "s1": 146455.0,
-        "prevDayHigh": 148295.0,
-        "prevDayLow": 146550.0,
-        "ema15_5": 146830.72,
-        "monthlyCPR_tc": 151024.0,
-        "monthlyCPR_pivot": 149382.33,
-        "monthlyCPR_bc": 147740.67,
-        "weeklyCPR_tc": 147833.5,
-        "weeklyCPR_pivot": 147649.0,
-        "weeklyCPR_bc": 147464.5,
-        "dailyCPR_tc": 147422.5,
-        "dailyCPR_pivot": 147375.0,
-        "dailyCPR_bc": 147327.5,
-        "dailyCPR_width": 95.0,
-        "dailyCPR_width_pct": 0.06,
-        "priceAt915": 147070.0,
-        "atmStrike915": 147000.0
-      },
-      "isNarrowCPR": true,
-      "optionLevels": null,
-      "underlyingSignal": "NONE",
-      "confirmation": {
-        "call": "NONE",
-        "put": "NONE"
-      }
+      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x00000207F987C910>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
+      "optionLevels": null
     },
     {
       "symbol": "SILVERM",
       "security_id": "483080",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/silver-mini-chart/",
-      "error": null,
-      "ltp": 211769.0,
-      "last_bar_time": "2026-10-15T10:30:00",
-      "signal": "NONE",
-      "buy": {
-        "count": 0,
-        "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=n"
-      },
-      "sell": {
-        "count": 4,
-        "total": 7,
-        "detail": "Daily EMA stack=Y, 60m EMA stack=Y, 15m EMA stack=n, Below pivot=Y, Below prev-day low=n, Below Daily S1=n, Below ATM strike (9:15)=Y"
-      },
-      "levels": {
-        "openRangeClose": 211005.0,
-        "pivot": 214432.67,
-        "r1": 218164.33,
-        "s1": 207068.33,
-        "prevDayHigh": 221797.0,
-        "prevDayLow": 210701.0,
-        "ema15_5": 211621.41,
-        "monthlyCPR_tc": 236092.5,
-        "monthlyCPR_pivot": 232735.0,
-        "monthlyCPR_bc": 229377.5,
-        "weeklyCPR_tc": 227423.17,
-        "weeklyCPR_pivot": 226900.33,
-        "weeklyCPR_bc": 226377.5,
-        "dailyCPR_tc": 216249.0,
-        "dailyCPR_pivot": 214432.67,
-        "dailyCPR_bc": 212616.33,
-        "dailyCPR_width": 3632.67,
-        "dailyCPR_width_pct": 1.69,
-        "priceAt915": 212040.0,
-        "atmStrike915": 212000.0
-      },
-      "isNarrowCPR": false,
-      "optionLevels": {
-        "expiry": "2026-10-27",
-        "spot": 214436.0,
-        "maxPainStrike": 218000.0,
-        "resistanceStrike": 230000.0,
-        "supportStrike": 200000.0,
-        "atmDetails": {
-          "strike": 212000.0,
-          "ce_ltp": 4629.0,
-          "ce_oi": 944.0,
-          "ce_iv": 17.36,
-          "ce_volume": 1981.0,
-          "ce_bid": 4616.5,
-          "ce_ask": 4651.0,
-          "pe_ltp": 5155.5,
-          "pe_oi": 597.0,
-          "pe_iv": 41.73,
-          "pe_volume": 1314.0,
-          "pe_bid": 5155.5,
-          "pe_ask": 5183.5
-        }
-      },
-      "underlyingSignal": "NONE",
-      "confirmation": {
-        "call": null,
-        "put": "NONE"
-      }
+      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x00000207F987C690>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
+      "optionLevels": null
     },
     {
       "symbol": "NATGASMINI",
       "security_id": "568246",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/natural-gas-mini-chart/",
-      "error": "'timestamp'",
+      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x00000207F963BED0>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
       "optionLevels": null
-    },
-    {
-      "symbol": "GOLDM 147000 CALL",
-      "security_id": "581890",
-      "category": "MCX_OPTION",
-      "chart_url": null,
-      "error": null,
-      "ltp": 1905.0,
-      "last_bar_time": "2026-10-15T10:30:00",
-      "signal": "NONE",
-      "buy": {
-        "count": 1,
-        "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=Y, Above prev-day high=n, Above Daily R1=n, Above own 9:15 open=n"
-      },
-      "sell": {
-        "count": 2,
-        "total": 7,
-        "detail": "Daily EMA stack=Y, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n, Below own 9:15 open=Y"
-      },
-      "levels": {
-        "openRangeClose": 1856.5,
-        "pivot": 1782.17,
-        "r1": 2185.33,
-        "s1": 1036.33,
-        "prevDayHigh": 2528.0,
-        "prevDayLow": 1379.0,
-        "ema15_5": 1873.78,
-        "monthlyCPR_tc": 5505.75,
-        "monthlyCPR_pivot": 4887.0,
-        "monthlyCPR_bc": 4268.25,
-        "weeklyCPR_tc": 4071.17,
-        "weeklyCPR_pivot": 3847.33,
-        "weeklyCPR_bc": 3623.5,
-        "dailyCPR_tc": 1953.5,
-        "dailyCPR_pivot": 1782.17,
-        "dailyCPR_bc": 1610.83,
-        "dailyCPR_width": 342.67,
-        "dailyCPR_width_pct": 19.23,
-        "priceAt915": 1937.5,
-        "atmStrike915": 1937.5
-      },
-      "isNarrowCPR": false
-    },
-    {
-      "symbol": "GOLDM 147000 PUT",
-      "security_id": "581990",
-      "category": "MCX_OPTION",
-      "chart_url": null,
-      "error": null,
-      "ltp": 2779.0,
-      "last_bar_time": "2026-10-15T10:30:00",
-      "signal": "NONE",
-      "buy": {
-        "count": 2,
-        "total": 7,
-        "detail": "Daily EMA stack=Y, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n, Above own 9:15 open=Y"
-      },
-      "sell": {
-        "count": 1,
-        "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=Y, Below prev-day low=n, Below Daily S1=n, Below own 9:15 open=n"
-      },
-      "levels": {
-        "openRangeClose": 2836.0,
-        "pivot": 3168.0,
-        "r1": 4334.5,
-        "s1": 2433.0,
-        "prevDayHigh": 3903.0,
-        "prevDayLow": 2001.5,
-        "ema15_5": 2814.22,
-        "monthlyCPR_tc": 2504.17,
-        "monthlyCPR_pivot": 2385.83,
-        "monthlyCPR_bc": 2267.5,
-        "weeklyCPR_tc": 1992.25,
-        "weeklyCPR_pivot": 1691.83,
-        "weeklyCPR_bc": 1391.42,
-        "dailyCPR_tc": 3383.75,
-        "dailyCPR_pivot": 3168.0,
-        "dailyCPR_bc": 2952.25,
-        "dailyCPR_width": 431.5,
-        "dailyCPR_width_pct": 13.62,
-        "priceAt915": 2705.0,
-        "atmStrike915": 2705.0
-      },
-      "isNarrowCPR": false
-    },
-    {
-      "symbol": "SILVERM 212000 CALL",
-      "security_id": "568042",
-      "category": "MCX_OPTION",
-      "chart_url": null,
-      "error": "insufficient data"
-    },
-    {
-      "symbol": "SILVERM 212000 PUT",
-      "security_id": "568061",
-      "category": "MCX_OPTION",
-      "chart_url": null,
-      "error": null,
-      "ltp": 4950.0,
-      "last_bar_time": "2026-10-15T10:30:00",
-      "signal": "NONE",
-      "buy": {
-        "count": 4,
-        "total": 7,
-        "detail": "Daily EMA stack=Y, 60m EMA stack=Y, 15m EMA stack=n, Above pivot=Y, Above prev-day high=n, Above Daily R1=n, Above own 9:15 open=Y"
-      },
-      "sell": {
-        "count": 0,
-        "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n, Below own 9:15 open=n"
-      },
-      "levels": {
-        "openRangeClose": 5450.0,
-        "pivot": 4200.33,
-        "r1": 7076.17,
-        "s1": 2531.67,
-        "prevDayHigh": 5869.0,
-        "prevDayLow": 1324.5,
-        "ema15_5": 5052.82,
-        "monthlyCPR_tc": null,
-        "monthlyCPR_pivot": null,
-        "monthlyCPR_bc": null,
-        "weeklyCPR_tc": 1367.0,
-        "weeklyCPR_pivot": 1149.67,
-        "weeklyCPR_bc": 932.33,
-        "dailyCPR_tc": 4803.92,
-        "dailyCPR_pivot": 4200.33,
-        "dailyCPR_bc": 3596.75,
-        "dailyCPR_width": 1207.17,
-        "dailyCPR_width_pct": 28.74,
-        "priceAt915": 4780.0,
-        "atmStrike915": 4780.0
-      },
-      "isNarrowCPR": false
     }
   ]
 }
