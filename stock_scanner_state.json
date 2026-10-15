@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T12:40:03.458116",
+  "generated_at": "2026-10-15T12:55:04.696505",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -11,7 +11,7 @@
       "security_id": "565900",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/crude-oil-mini-chart/",
-      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x000002620766D2B0>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
+      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x000001499558D2B0>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
       "optionLevels": null
     },
     {
@@ -19,7 +19,7 @@
       "security_id": "569003",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/gold-mini-chart/",
-      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x00000262077FC910>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
+      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x000001499571C910>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
       "optionLevels": null
     },
     {
@@ -27,7 +27,7 @@
       "security_id": "483080",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/silver-mini-chart/",
-      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x00000262077FC690>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
+      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x000001499571C690>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
       "optionLevels": null
     },
     {
@@ -35,7 +35,7 @@
       "security_id": "568246",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/natural-gas-mini-chart/",
-      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x00000262075BBED0>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
+      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x00000149954DBED0>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
       "optionLevels": null
     }
   ]
