@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T11:55:02.888717",
+  "generated_at": "2026-10-16T12:10:02.018028",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -11,7 +11,7 @@
       "security_id": "565900",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/crude-oil-mini-chart/",
-      "error": "'timestamp'",
+      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x0000017C6107D2B0>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
       "optionLevels": null
     },
     {
@@ -19,7 +19,7 @@
       "security_id": "569003",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/gold-mini-chart/",
-      "error": "'timestamp'",
+      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x0000017C6120C910>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
       "optionLevels": null
     },
     {
@@ -28,13 +28,13 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/silver-mini-chart/",
       "error": null,
-      "ltp": 215110.0,
-      "last_bar_time": "2026-10-16T11:30:00",
+      "ltp": 215455.0,
+      "last_bar_time": "2026-10-16T11:45:00",
       "signal": "NONE",
       "buy": {
-        "count": 4,
+        "count": 5,
         "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=Y, Above prev-day high=Y, Above Daily R1=Y, Above ATM strike (9:15)=Y"
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=Y, Above pivot=Y, Above prev-day high=Y, Above Daily R1=Y, Above ATM strike (9:15)=Y"
       },
       "sell": {
         "count": 1,
@@ -48,7 +48,7 @@
         "s1": 211303.0,
         "prevDayHigh": 213983.0,
         "prevDayLow": 210646.0,
-        "ema15_5": 215211.21,
+        "ema15_5": 215292.47,
         "monthlyCPR_tc": 236092.5,
         "monthlyCPR_pivot": 232735.0,
         "monthlyCPR_bc": 229377.5,
@@ -72,18 +72,18 @@
         "supportStrike": 190000.0,
         "atmDetails": {
           "strike": 214000.0,
-          "ce_ltp": 4986.5,
-          "ce_oi": 597.0,
-          "ce_iv": 47.58,
-          "ce_volume": 1833.0,
-          "ce_bid": 4963.0,
-          "ce_ask": 5010.0,
-          "pe_ltp": 3606.5,
-          "pe_oi": 469.0,
+          "ce_ltp": 5109.0,
+          "ce_oi": 571.0,
+          "ce_iv": 48.45,
+          "ce_volume": 1886.0,
+          "ce_bid": 5094.0,
+          "ce_ask": 5134.5,
+          "pe_ltp": 3525.0,
+          "pe_oi": 463.0,
           "pe_iv": 0.0,
-          "pe_volume": 830.0,
-          "pe_bid": 3601.0,
-          "pe_ask": 3637.0
+          "pe_volume": 859.0,
+          "pe_bid": 3504.5,
+          "pe_ask": 3526.5
         }
       },
       "underlyingSignal": "NONE",
@@ -106,13 +106,13 @@
       "category": "MCX_OPTION",
       "chart_url": null,
       "error": null,
-      "ltp": 4861.5,
-      "last_bar_time": "2026-10-16T11:30:00",
+      "ltp": 4993.5,
+      "last_bar_time": "2026-10-16T11:45:00",
       "signal": "NONE",
       "buy": {
-        "count": 5,
+        "count": 6,
         "total": 7,
-        "detail": "Daily EMA stack=Y, 60m EMA stack=n, 15m EMA stack=n, Above pivot=Y, Above prev-day high=Y, Above Daily R1=Y, Above own 9:15 open=Y"
+        "detail": "Daily EMA stack=Y, 60m EMA stack=n, 15m EMA stack=Y, Above pivot=Y, Above prev-day high=Y, Above Daily R1=Y, Above own 9:15 open=Y"
       },
       "sell": {
         "count": 0,
@@ -126,7 +126,7 @@
         "s1": 3399.5,
         "prevDayHigh": 4816.5,
         "prevDayLow": 3500.0,
-        "ema15_5": 4940.21,
+        "ema15_5": 4957.97,
         "monthlyCPR_tc": null,
         "monthlyCPR_pivot": null,
         "monthlyCPR_bc": null,
@@ -149,8 +149,8 @@
       "category": "MCX_OPTION",
       "chart_url": null,
       "error": null,
-      "ltp": 3691.0,
-      "last_bar_time": "2026-10-16T11:30:00",
+      "ltp": 3599.0,
+      "last_bar_time": "2026-10-16T11:45:00",
       "signal": "NONE",
       "buy": {
         "count": 0,
@@ -169,7 +169,7 @@
         "s1": 4018.5,
         "prevDayHigh": 6863.5,
         "prevDayLow": 4626.5,
-        "ema15_5": 3691.81,
+        "ema15_5": 3660.88,
         "monthlyCPR_tc": null,
         "monthlyCPR_pivot": null,
         "monthlyCPR_bc": null,
