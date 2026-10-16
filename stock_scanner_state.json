@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T08:52:46.200727",
+  "generated_at": "2026-10-16T09:10:02.708841",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -67,23 +67,23 @@
       "optionLevels": {
         "expiry": "2026-10-27",
         "spot": 208424.0,
-        "maxPainStrike": 219000.0,
+        "maxPainStrike": 220000.0,
         "resistanceStrike": 230000.0,
         "supportStrike": 200000.0,
         "atmDetails": {
           "strike": 212000.0,
-          "ce_ltp": 5200.0,
-          "ce_oi": 662.0,
-          "ce_iv": 43.41,
-          "ce_volume": 0.0,
-          "ce_bid": 507.0,
-          "ce_ask": 0.0,
-          "pe_ltp": 4028.5,
-          "pe_oi": 658.0,
-          "pe_iv": 15.26,
-          "pe_volume": 0.0,
-          "pe_bid": 393.0,
-          "pe_ask": 0.0
+          "ce_ltp": 5800.0,
+          "ce_oi": 586.0,
+          "ce_iv": 47.47,
+          "ce_volume": 182.0,
+          "ce_bid": 5792.5,
+          "ce_ask": 5835.0,
+          "pe_ltp": 3400.0,
+          "pe_oi": 650.0,
+          "pe_iv": 10.24,
+          "pe_volume": 195.0,
+          "pe_bid": 3373.0,
+          "pe_ask": 3402.0
         }
       },
       "underlyingSignal": "NONE",
