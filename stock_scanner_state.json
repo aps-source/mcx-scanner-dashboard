@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T12:06:38.576552",
+  "generated_at": "2026-10-21T12:10:01.829305",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -11,7 +11,7 @@
       "security_id": "565900",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/crude-oil-mini-chart/",
-      "error": "'timestamp'",
+      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x000001C8B6F6D2B0>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
       "optionLevels": null
     },
     {
@@ -72,18 +72,18 @@
         "supportStrike": 190000.0,
         "atmDetails": {
           "strike": 213000.0,
-          "ce_ltp": 2419.5,
-          "ce_oi": 1376.0,
-          "ce_iv": 36.91,
-          "ce_volume": 8402.0,
-          "ce_bid": 2412.0,
-          "ce_ask": 2429.0,
-          "pe_ltp": 3908.5,
-          "pe_oi": 657.0,
+          "ce_ltp": 2360.0,
+          "ce_oi": 1378.0,
+          "ce_iv": 36.35,
+          "ce_volume": 8479.0,
+          "ce_bid": 2353.5,
+          "ce_ask": 2372.0,
+          "pe_ltp": 3970.0,
+          "pe_oi": 703.0,
           "pe_iv": 0.0,
-          "pe_volume": 6358.0,
-          "pe_bid": 3901.0,
-          "pe_ask": 3927.5
+          "pe_volume": 6539.0,
+          "pe_bid": 3961.0,
+          "pe_ask": 3983.0
         }
       },
       "underlyingSignal": "NONE",
