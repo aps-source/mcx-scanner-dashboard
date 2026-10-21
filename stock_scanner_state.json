@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T08:51:45.786696",
+  "generated_at": "2026-10-21T09:06:40.124309",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -67,7 +67,7 @@
       "optionLevels": {
         "expiry": "2026-10-27",
         "spot": 208380.0,
-        "maxPainStrike": 216000.0,
+        "maxPainStrike": 215000.0,
         "resistanceStrike": 230000.0,
         "supportStrike": 190000.0,
         "atmDetails": null
