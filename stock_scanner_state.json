@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T09:10:06.175356",
+  "generated_at": "2026-10-21T09:21:38.812709",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -28,38 +28,38 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/silver-mini-chart/",
       "error": null,
-      "ltp": 213960.0,
-      "last_bar_time": "2026-10-20T23:15:00",
+      "ltp": 212654.0,
+      "last_bar_time": "2026-10-21T09:00:00",
       "signal": "NONE",
       "buy": {
-        "count": 2,
+        "count": 0,
         "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=Y, Above pivot=Y, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=n"
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=n"
       },
       "sell": {
-        "count": 1,
+        "count": 2,
         "total": 7,
-        "detail": "Daily EMA stack=Y, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n, Below ATM strike (9:15)=n"
+        "detail": "Daily EMA stack=Y, 60m EMA stack=n, 15m EMA stack=n, Below pivot=Y, Below prev-day low=n, Below Daily S1=n, Below ATM strike (9:15)=n"
       },
       "levels": {
         "openRangeClose": null,
-        "pivot": 213072.67,
-        "r1": 214474.33,
-        "s1": 210890.33,
-        "prevDayHigh": 215255.0,
-        "prevDayLow": 211671.0,
-        "ema15_5": 213788.96,
+        "pivot": 213449.0,
+        "r1": 216348.0,
+        "s1": 211061.0,
+        "prevDayHigh": 215837.0,
+        "prevDayLow": 210550.0,
+        "ema15_5": 213410.64,
         "monthlyCPR_tc": 236092.5,
         "monthlyCPR_pivot": 232735.0,
         "monthlyCPR_bc": 229377.5,
         "weeklyCPR_tc": 219354.5,
         "weeklyCPR_pivot": 217519.67,
         "weeklyCPR_bc": 215684.83,
-        "dailyCPR_tc": 213463.0,
-        "dailyCPR_pivot": 213072.67,
-        "dailyCPR_bc": 212682.33,
-        "dailyCPR_width": 780.67,
-        "dailyCPR_width_pct": 0.37,
+        "dailyCPR_tc": 213704.5,
+        "dailyCPR_pivot": 213449.0,
+        "dailyCPR_bc": 213193.5,
+        "dailyCPR_width": 511.0,
+        "dailyCPR_width_pct": 0.24,
         "priceAt915": null,
         "atmStrike915": null
       },
