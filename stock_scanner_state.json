@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T10:10:02.175062",
+  "generated_at": "2026-10-23T10:25:02.707695",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -28,8 +28,8 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/silver-mini-chart/",
       "error": null,
-      "ltp": 194855.0,
-      "last_bar_time": "2026-10-23T09:45:00",
+      "ltp": 195470.0,
+      "last_bar_time": "2026-10-23T10:00:00",
       "signal": "NONE",
       "buy": {
         "count": 0,
@@ -48,7 +48,7 @@
         "s1": 198598.0,
         "prevDayHigh": 210780.0,
         "prevDayLow": 201137.0,
-        "ema15_5": 197160.61,
+        "ema15_5": 196597.08,
         "monthlyCPR_tc": 236092.5,
         "monthlyCPR_pivot": 232735.0,
         "monthlyCPR_bc": 229377.5,
@@ -72,18 +72,18 @@
         "supportStrike": 180000.0,
         "atmDetails": {
           "strike": 198000.0,
-          "ce_ltp": 2455.0,
-          "ce_oi": 631.0,
+          "ce_ltp": 2625.0,
+          "ce_oi": 763.0,
           "ce_iv": 0.0,
-          "ce_volume": 4259.0,
-          "ce_bid": 2438.0,
-          "ce_ask": 2460.0,
-          "pe_ltp": 5125.5,
-          "pe_oi": 640.0,
-          "pe_iv": 72.14,
-          "pe_volume": 9784.0,
-          "pe_bid": 5119.5,
-          "pe_ask": 5138.5
+          "ce_volume": 4702.0,
+          "ce_bid": 2618.0,
+          "ce_ask": 2639.5,
+          "pe_ltp": 4690.5,
+          "pe_oi": 569.0,
+          "pe_iv": 67.33,
+          "pe_volume": 10100.0,
+          "pe_bid": 4666.0,
+          "pe_ask": 4708.5
         }
       },
       "underlyingSignal": "PUT",
@@ -97,7 +97,7 @@
       "security_id": "568246",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/natural-gas-mini-chart/",
-      "error": "Expecting value: line 1 column 1 (char 0)",
+      "error": "'timestamp'",
       "optionLevels": null
     },
     {
@@ -112,7 +112,7 @@
       "security_id": "577927",
       "category": "MCX_OPTION",
       "chart_url": null,
-      "error": "Expecting value: line 1 column 1 (char 0)"
+      "error": "insufficient data"
     }
   ]
 }
