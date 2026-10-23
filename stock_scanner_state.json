@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T10:25:02.707695",
+  "generated_at": "2026-10-23T10:40:02.176464",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -28,8 +28,8 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/silver-mini-chart/",
       "error": null,
-      "ltp": 195470.0,
-      "last_bar_time": "2026-10-23T10:00:00",
+      "ltp": 196249.0,
+      "last_bar_time": "2026-10-23T10:15:00",
       "signal": "NONE",
       "buy": {
         "count": 0,
@@ -48,7 +48,7 @@
         "s1": 198598.0,
         "prevDayHigh": 210780.0,
         "prevDayLow": 201137.0,
-        "ema15_5": 196597.08,
+        "ema15_5": 196481.05,
         "monthlyCPR_tc": 236092.5,
         "monthlyCPR_pivot": 232735.0,
         "monthlyCPR_bc": 229377.5,
@@ -72,18 +72,18 @@
         "supportStrike": 180000.0,
         "atmDetails": {
           "strike": 198000.0,
-          "ce_ltp": 2625.0,
-          "ce_oi": 763.0,
+          "ce_ltp": 3095.5,
+          "ce_oi": 864.0,
           "ce_iv": 0.0,
-          "ce_volume": 4702.0,
-          "ce_bid": 2618.0,
-          "ce_ask": 2639.5,
-          "pe_ltp": 4690.5,
-          "pe_oi": 569.0,
-          "pe_iv": 67.33,
-          "pe_volume": 10100.0,
-          "pe_bid": 4666.0,
-          "pe_ask": 4708.5
+          "ce_volume": 5827.0,
+          "ce_bid": 3091.0,
+          "ce_ask": 3112.5,
+          "pe_ltp": 3916.5,
+          "pe_oi": 470.0,
+          "pe_iv": 58.67,
+          "pe_volume": 10791.0,
+          "pe_bid": 3892.0,
+          "pe_ask": 3918.0
         }
       },
       "underlyingSignal": "PUT",
