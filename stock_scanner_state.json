@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T09:25:02.457632",
+  "generated_at": "2026-10-23T09:40:02.309592",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -28,8 +28,8 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/silver-mini-chart/",
       "error": null,
-      "ltp": 198100.0,
-      "last_bar_time": "2026-10-23T09:00:00",
+      "ltp": 196866.0,
+      "last_bar_time": "2026-10-23T09:15:00",
       "signal": "NONE",
       "buy": {
         "count": 0,
@@ -37,9 +37,9 @@
         "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=n"
       },
       "sell": {
-        "count": 6,
+        "count": 7,
         "total": 7,
-        "detail": "Daily EMA stack=Y, 60m EMA stack=Y, 15m EMA stack=Y, Below pivot=Y, Below prev-day low=Y, Below Daily S1=Y, Below ATM strike (9:15)=n"
+        "detail": "Daily EMA stack=Y, 60m EMA stack=Y, 15m EMA stack=Y, Below pivot=Y, Below prev-day low=Y, Below Daily S1=Y, Below ATM strike (9:15)=Y"
       },
       "levels": {
         "openRangeClose": null,
@@ -48,7 +48,7 @@
         "s1": 198598.0,
         "prevDayHigh": 210780.0,
         "prevDayLow": 201137.0,
-        "ema15_5": 200679.19,
+        "ema15_5": 199408.13,
         "monthlyCPR_tc": 236092.5,
         "monthlyCPR_pivot": 232735.0,
         "monthlyCPR_bc": 229377.5,
@@ -60,8 +60,8 @@
         "dailyCPR_bc": 203419.5,
         "dailyCPR_width": 2539.0,
         "dailyCPR_width_pct": 1.24,
-        "priceAt915": null,
-        "atmStrike915": null
+        "priceAt915": 198100.0,
+        "atmStrike915": 198000.0
       },
       "isNarrowCPR": false,
       "optionLevels": {
@@ -70,9 +70,23 @@
         "maxPainStrike": 206000.0,
         "resistanceStrike": 230000.0,
         "supportStrike": 180000.0,
-        "atmDetails": null
+        "atmDetails": {
+          "strike": 198000.0,
+          "ce_ltp": 2699.0,
+          "ce_oi": 850.0,
+          "ce_iv": 0.0,
+          "ce_volume": 2758.0,
+          "ce_bid": 2669.5,
+          "ce_ask": 2691.5,
+          "pe_ltp": 4723.5,
+          "pe_oi": 903.0,
+          "pe_iv": 67.49,
+          "pe_volume": 8206.0,
+          "pe_bid": 4719.0,
+          "pe_ask": 4770.0
+        }
       },
-      "underlyingSignal": "NONE",
+      "underlyingSignal": "PUT",
       "confirmation": {
         "call": null,
         "put": null
@@ -85,6 +99,20 @@
       "chart_url": "https://dhan.co/commodity/natural-gas-mini-chart/",
       "error": "'timestamp'",
       "optionLevels": null
+    },
+    {
+      "symbol": "SILVERM 198000 CALL",
+      "security_id": "577788",
+      "category": "MCX_OPTION",
+      "chart_url": null,
+      "error": "insufficient data"
+    },
+    {
+      "symbol": "SILVERM 198000 PUT",
+      "security_id": "577927",
+      "category": "MCX_OPTION",
+      "chart_url": null,
+      "error": "insufficient data"
     }
   ]
 }
