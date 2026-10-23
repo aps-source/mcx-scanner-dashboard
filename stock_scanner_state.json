@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T09:40:02.309592",
+  "generated_at": "2026-10-23T09:55:02.877761",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -28,8 +28,8 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/silver-mini-chart/",
       "error": null,
-      "ltp": 196866.0,
-      "last_bar_time": "2026-10-23T09:15:00",
+      "ltp": 196124.0,
+      "last_bar_time": "2026-10-23T09:30:00",
       "signal": "NONE",
       "buy": {
         "count": 0,
@@ -42,13 +42,13 @@
         "detail": "Daily EMA stack=Y, 60m EMA stack=Y, 15m EMA stack=Y, Below pivot=Y, Below prev-day low=Y, Below Daily S1=Y, Below ATM strike (9:15)=Y"
       },
       "levels": {
-        "openRangeClose": null,
+        "openRangeClose": 196124.0,
         "pivot": 204689.0,
         "r1": 208241.0,
         "s1": 198598.0,
         "prevDayHigh": 210780.0,
         "prevDayLow": 201137.0,
-        "ema15_5": 199408.13,
+        "ema15_5": 198313.42,
         "monthlyCPR_tc": 236092.5,
         "monthlyCPR_pivot": 232735.0,
         "monthlyCPR_bc": 229377.5,
@@ -72,18 +72,18 @@
         "supportStrike": 180000.0,
         "atmDetails": {
           "strike": 198000.0,
-          "ce_ltp": 2699.0,
-          "ce_oi": 850.0,
+          "ce_ltp": 2452.5,
+          "ce_oi": 746.0,
           "ce_iv": 0.0,
-          "ce_volume": 2758.0,
-          "ce_bid": 2669.5,
-          "ce_ask": 2691.5,
-          "pe_ltp": 4723.5,
-          "pe_oi": 903.0,
-          "pe_iv": 67.49,
-          "pe_volume": 8206.0,
-          "pe_bid": 4719.0,
-          "pe_ask": 4770.0
+          "ce_volume": 3542.0,
+          "ce_bid": 2410.5,
+          "ce_ask": 2433.5,
+          "pe_ltp": 5163.5,
+          "pe_oi": 754.0,
+          "pe_iv": 72.49,
+          "pe_volume": 9061.0,
+          "pe_bid": 5148.0,
+          "pe_ask": 5192.5
         }
       },
       "underlyingSignal": "PUT",
