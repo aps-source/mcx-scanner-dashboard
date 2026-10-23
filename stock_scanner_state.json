@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T11:10:14.062003",
+  "generated_at": "2026-10-23T11:25:02.693143",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -28,18 +28,18 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/silver-mini-chart/",
       "error": null,
-      "ltp": 196950.0,
-      "last_bar_time": "2026-10-23T10:45:00",
+      "ltp": 199381.0,
+      "last_bar_time": "2026-10-23T11:00:00",
       "signal": "NONE",
       "buy": {
-        "count": 0,
+        "count": 1,
         "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=n"
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=Y"
       },
       "sell": {
-        "count": 7,
+        "count": 3,
         "total": 7,
-        "detail": "Daily EMA stack=Y, 60m EMA stack=Y, 15m EMA stack=Y, Below pivot=Y, Below prev-day low=Y, Below Daily S1=Y, Below ATM strike (9:15)=Y"
+        "detail": "Daily EMA stack=Y, 60m EMA stack=n, 15m EMA stack=n, Below pivot=Y, Below prev-day low=Y, Below Daily S1=n, Below ATM strike (9:15)=n"
       },
       "levels": {
         "openRangeClose": 196124.0,
@@ -48,7 +48,7 @@
         "s1": 198598.0,
         "prevDayHigh": 210780.0,
         "prevDayLow": 201137.0,
-        "ema15_5": 196967.58,
+        "ema15_5": 197772.05,
         "monthlyCPR_tc": 236092.5,
         "monthlyCPR_pivot": 232735.0,
         "monthlyCPR_bc": 229377.5,
@@ -72,21 +72,21 @@
         "supportStrike": 180000.0,
         "atmDetails": {
           "strike": 198000.0,
-          "ce_ltp": 4372.5,
-          "ce_oi": 664.0,
-          "ce_iv": 27.78,
-          "ce_volume": 10988.0,
-          "ce_bid": 4365.0,
-          "ce_ask": 4390.5,
-          "pe_ltp": 2825.0,
-          "pe_oi": 812.0,
-          "pe_iv": 46.33,
-          "pe_volume": 14294.0,
-          "pe_bid": 2800.0,
-          "pe_ask": 2813.5
+          "ce_ltp": 3951.0,
+          "ce_oi": 589.0,
+          "ce_iv": 22.4,
+          "ce_volume": 11954.0,
+          "ce_bid": 3935.0,
+          "ce_ask": 3965.0,
+          "pe_ltp": 3261.0,
+          "pe_oi": 827.0,
+          "pe_iv": 51.38,
+          "pe_volume": 16256.0,
+          "pe_bid": 3254.0,
+          "pe_ask": 3275.0
         }
       },
-      "underlyingSignal": "PUT",
+      "underlyingSignal": "NONE",
       "confirmation": {
         "call": null,
         "put": null
