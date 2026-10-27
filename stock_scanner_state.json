@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T14:55:04.645347",
+  "generated_at": "2026-10-27T15:10:03.189630",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -11,7 +11,7 @@
       "security_id": "565900",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/crude-oil-mini-chart/",
-      "error": "'timestamp'",
+      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x000001F102C8D2B0>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
       "optionLevels": null
     },
     {
@@ -28,8 +28,8 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/silver-mini-chart/",
       "error": null,
-      "ltp": 194485.0,
-      "last_bar_time": "2026-10-27T14:30:00",
+      "ltp": 194707.0,
+      "last_bar_time": "2026-10-27T14:45:00",
       "signal": "NONE",
       "buy": {
         "count": 0,
@@ -37,9 +37,9 @@
         "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=n"
       },
       "sell": {
-        "count": 6,
+        "count": 4,
         "total": 7,
-        "detail": "Daily EMA stack=Y, 60m EMA stack=Y, 15m EMA stack=n, Below pivot=Y, Below prev-day low=Y, Below Daily S1=Y, Below ATM strike (9:15)=Y"
+        "detail": "Daily EMA stack=Y, 60m EMA stack=n, 15m EMA stack=n, Below pivot=Y, Below prev-day low=n, Below Daily S1=Y, Below ATM strike (9:15)=Y"
       },
       "levels": {
         "openRangeClose": 196900.0,
@@ -48,7 +48,7 @@
         "s1": 195140.33,
         "prevDayHigh": 199189.0,
         "prevDayLow": 194500.0,
-        "ema15_5": 194203.14,
+        "ema15_5": 194371.09,
         "monthlyCPR_tc": 236092.5,
         "monthlyCPR_pivot": 232735.0,
         "monthlyCPR_bc": 229377.5,
@@ -72,18 +72,18 @@
         "supportStrike": 190000.0,
         "atmDetails": {
           "strike": 197000.0,
-          "ce_ltp": 524.0,
-          "ce_oi": 4693.0,
-          "ce_iv": 80.63,
-          "ce_volume": 119796.0,
-          "ce_bid": 523.0,
-          "ce_ask": 529.0,
-          "pe_ltp": 2904.5,
-          "pe_oi": 729.0,
+          "ce_ltp": 569.0,
+          "ce_oi": 4918.0,
+          "ce_iv": 83.74,
+          "ce_volume": 126150.0,
+          "ce_bid": 567.5,
+          "ce_ask": 571.0,
+          "pe_ltp": 2809.0,
+          "pe_oi": 723.0,
           "pe_iv": 0.0,
-          "pe_volume": 34239.0,
-          "pe_bid": 2869.5,
-          "pe_ask": 2900.5
+          "pe_volume": 34542.0,
+          "pe_bid": 2789.5,
+          "pe_ask": 2809.5
         }
       },
       "underlyingSignal": "NONE",
@@ -106,8 +106,8 @@
       "category": "MCX_OPTION",
       "chart_url": null,
       "error": null,
-      "ltp": 515.0,
-      "last_bar_time": "2026-10-27T14:30:00",
+      "ltp": 530.5,
+      "last_bar_time": "2026-10-27T14:45:00",
       "signal": "NONE",
       "buy": {
         "count": 0,
@@ -126,7 +126,7 @@
         "s1": 1161.33,
         "prevDayHigh": 4020.0,
         "prevDayLow": 1362.0,
-        "ema15_5": 464.37,
+        "ema15_5": 486.41,
         "monthlyCPR_tc": null,
         "monthlyCPR_pivot": null,
         "monthlyCPR_bc": null,
@@ -149,8 +149,8 @@
       "category": "MCX_OPTION",
       "chart_url": null,
       "error": null,
-      "ltp": 3000.0,
-      "last_bar_time": "2026-10-27T14:30:00",
+      "ltp": 2797.5,
+      "last_bar_time": "2026-10-27T14:45:00",
       "signal": "NONE",
       "buy": {
         "count": 3,
@@ -169,7 +169,7 @@
         "s1": -49.33,
         "prevDayHigh": 3900.0,
         "prevDayLow": 281.0,
-        "ema15_5": 3251.57,
+        "ema15_5": 3100.21,
         "monthlyCPR_tc": null,
         "monthlyCPR_pivot": null,
         "monthlyCPR_bc": null,
