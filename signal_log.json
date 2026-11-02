@@ -14172,5 +14172,18 @@
       "SILVERM 189000 PUT"
     ],
     "put_symbols": []
+  },
+  {
+    "generated_at": "2026-11-02T08:52:41.417080",
+    "date": "2026-11-02",
+    "time": "08:52",
+    "call": 1,
+    "put": 0,
+    "none": 2,
+    "err": 3,
+    "call_symbols": [
+      "SILVERM 189000 PUT"
+    ],
+    "put_symbols": []
   }
 ]
