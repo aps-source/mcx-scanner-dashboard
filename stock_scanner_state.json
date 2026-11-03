@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T09:25:02.641274",
+  "generated_at": "2026-11-03T09:40:02.430818",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -28,8 +28,8 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/silver-mini-chart/",
       "error": null,
-      "ltp": 181804.0,
-      "last_bar_time": "2026-11-03T09:00:00",
+      "ltp": 181766.0,
+      "last_bar_time": "2026-11-03T09:15:00",
       "signal": "NONE",
       "buy": {
         "count": 0,
@@ -37,9 +37,9 @@
         "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n, Above ATM strike (9:15)=n"
       },
       "sell": {
-        "count": 5,
+        "count": 6,
         "total": 7,
-        "detail": "Daily EMA stack=Y, 60m EMA stack=Y, 15m EMA stack=n, Below pivot=Y, Below prev-day low=Y, Below Daily S1=Y, Below ATM strike (9:15)=n"
+        "detail": "Daily EMA stack=Y, 60m EMA stack=Y, 15m EMA stack=n, Below pivot=Y, Below prev-day low=Y, Below Daily S1=Y, Below ATM strike (9:15)=Y"
       },
       "levels": {
         "openRangeClose": null,
@@ -48,7 +48,7 @@
         "s1": 182744.67,
         "prevDayHigh": 186488.0,
         "prevDayLow": 181811.0,
-        "ema15_5": 184295.55,
+        "ema15_5": 183452.37,
         "monthlyCPR_tc": 205625.0,
         "monthlyCPR_pivot": 197511.33,
         "monthlyCPR_bc": 189397.67,
@@ -60,8 +60,8 @@
         "dailyCPR_bc": 184149.5,
         "dailyCPR_width": 933.67,
         "dailyCPR_width_pct": 0.51,
-        "priceAt915": null,
-        "atmStrike915": null
+        "priceAt915": 181800.0,
+        "atmStrike915": 182000.0
       },
       "isNarrowCPR": false,
       "optionLevels": {
@@ -70,12 +70,26 @@
         "maxPainStrike": 190000.0,
         "resistanceStrike": 250000.0,
         "supportStrike": 160000.0,
-        "atmDetails": null
+        "atmDetails": {
+          "strike": 182000.0,
+          "ce_ltp": 7247.5,
+          "ce_oi": 338.0,
+          "ce_iv": 44.23,
+          "ce_volume": 393.0,
+          "ce_bid": 7204.0,
+          "ce_ask": 7226.5,
+          "pe_ltp": 7649.5,
+          "pe_oi": 441.0,
+          "pe_iv": 42.31,
+          "pe_volume": 674.0,
+          "pe_bid": 7596.0,
+          "pe_ask": 7636.0
+        }
       },
       "underlyingSignal": "NONE",
       "confirmation": {
-        "call": null,
-        "put": null
+        "call": "NONE",
+        "put": "NONE"
       }
     },
     {
@@ -85,6 +99,92 @@
       "chart_url": "https://dhan.co/commodity/natural-gas-mini-chart/",
       "error": "'timestamp'",
       "optionLevels": null
+    },
+    {
+      "symbol": "SILVERM 182000 CALL",
+      "security_id": "587620",
+      "category": "MCX_OPTION",
+      "chart_url": null,
+      "error": null,
+      "ltp": 7312.5,
+      "last_bar_time": "2026-11-03T09:15:00",
+      "signal": "NONE",
+      "buy": {
+        "count": 1,
+        "total": 7,
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n, Above own 9:15 open=Y"
+      },
+      "sell": {
+        "count": 5,
+        "total": 7,
+        "detail": "Daily EMA stack=n, 60m EMA stack=Y, 15m EMA stack=Y, Below pivot=Y, Below prev-day low=Y, Below Daily S1=Y, Below own 9:15 open=n"
+      },
+      "levels": {
+        "openRangeClose": null,
+        "pivot": 8867.33,
+        "r1": 10155.67,
+        "s1": 7926.17,
+        "prevDayHigh": 9808.5,
+        "prevDayLow": 7579.0,
+        "ema15_5": 8109.36,
+        "monthlyCPR_tc": 9559.0,
+        "monthlyCPR_pivot": 8794.67,
+        "monthlyCPR_bc": 8030.33,
+        "weeklyCPR_tc": 9559.0,
+        "weeklyCPR_pivot": 8794.67,
+        "weeklyCPR_bc": 8030.33,
+        "dailyCPR_tc": 9040.92,
+        "dailyCPR_pivot": 8867.33,
+        "dailyCPR_bc": 8693.75,
+        "dailyCPR_width": 347.17,
+        "dailyCPR_width_pct": 3.92,
+        "priceAt915": 7301.0,
+        "atmStrike915": 7301.0
+      },
+      "isNarrowCPR": false
+    },
+    {
+      "symbol": "SILVERM 182000 PUT",
+      "security_id": "587629",
+      "category": "MCX_OPTION",
+      "chart_url": null,
+      "error": null,
+      "ltp": 7400.5,
+      "last_bar_time": "2026-11-03T09:15:00",
+      "signal": "NONE",
+      "buy": {
+        "count": 4,
+        "total": 7,
+        "detail": "Daily EMA stack=Y, 60m EMA stack=Y, 15m EMA stack=n, Above pivot=Y, Above prev-day high=n, Above Daily R1=Y, Above own 9:15 open=n"
+      },
+      "sell": {
+        "count": 1,
+        "total": 7,
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n, Below own 9:15 open=Y"
+      },
+      "levels": {
+        "openRangeClose": null,
+        "pivot": 6115.5,
+        "r1": 7097.0,
+        "s1": 4393.0,
+        "prevDayHigh": 7838.0,
+        "prevDayLow": 5134.0,
+        "ema15_5": 6531.92,
+        "monthlyCPR_tc": 6893.08,
+        "monthlyCPR_pivot": 6166.17,
+        "monthlyCPR_bc": 5439.25,
+        "weeklyCPR_tc": 6893.08,
+        "weeklyCPR_pivot": 6166.17,
+        "weeklyCPR_bc": 5439.25,
+        "dailyCPR_tc": 6486.0,
+        "dailyCPR_pivot": 6115.5,
+        "dailyCPR_bc": 5745.0,
+        "dailyCPR_width": 741.0,
+        "dailyCPR_width_pct": 12.12,
+        "priceAt915": 7433.0,
+        "atmStrike915": 7433.0
+      },
+      "isNarrowCPR": false
     }
   ]
 }
