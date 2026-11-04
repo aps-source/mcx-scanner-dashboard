@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T11:55:03.483619",
+  "generated_at": "2026-11-04T12:10:02.190009",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -28,8 +28,8 @@
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/silver-mini-chart/",
       "error": null,
-      "ltp": 187017.0,
-      "last_bar_time": "2026-11-04T11:30:00",
+      "ltp": 188216.0,
+      "last_bar_time": "2026-11-04T11:45:00",
       "signal": "NONE",
       "buy": {
         "count": 5,
@@ -37,9 +37,9 @@
         "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=Y, Above pivot=Y, Above prev-day high=Y, Above Daily R1=Y, Above ATM strike (9:15)=Y"
       },
       "sell": {
-        "count": 1,
+        "count": 0,
         "total": 7,
-        "detail": "Daily EMA stack=Y, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n, Below ATM strike (9:15)=n"
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n, Below ATM strike (9:15)=n"
       },
       "levels": {
         "openRangeClose": 180946.0,
@@ -48,7 +48,7 @@
         "s1": 177619.33,
         "prevDayHigh": 184400.0,
         "prevDayLow": 176979.0,
-        "ema15_5": 184766.12,
+        "ema15_5": 185916.08,
         "monthlyCPR_tc": 205625.0,
         "monthlyCPR_pivot": 197511.33,
         "monthlyCPR_bc": 189397.67,
@@ -72,18 +72,18 @@
         "supportStrike": 170000.0,
         "atmDetails": {
           "strike": 180000.0,
-          "ce_ltp": 11542.5,
-          "ce_oi": 1486.0,
-          "ce_iv": 78.62,
-          "ce_volume": 5345.0,
-          "ce_bid": 11559.5,
-          "ce_ask": 11600.0,
-          "pe_ltp": 4013.5,
-          "pe_oi": 3403.0,
-          "pe_iv": 13.9,
-          "pe_volume": 9650.0,
-          "pe_bid": 3994.0,
-          "pe_ask": 4018.5
+          "ce_ltp": 11850.5,
+          "ce_oi": 1458.0,
+          "ce_iv": 80.53,
+          "ce_volume": 5500.0,
+          "ce_bid": 11840.5,
+          "ce_ask": 11912.0,
+          "pe_ltp": 3948.5,
+          "pe_oi": 3443.0,
+          "pe_iv": 13.46,
+          "pe_volume": 10302.0,
+          "pe_bid": 3916.0,
+          "pe_ask": 3936.5
         }
       },
       "underlyingSignal": "NONE",
@@ -106,8 +106,8 @@
       "category": "MCX_OPTION",
       "chart_url": null,
       "error": null,
-      "ltp": 11185.0,
-      "last_bar_time": "2026-11-04T11:30:00",
+      "ltp": 12008.5,
+      "last_bar_time": "2026-11-04T11:45:00",
       "signal": "NONE",
       "buy": {
         "count": 5,
@@ -115,9 +115,9 @@
         "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=Y, Above pivot=Y, Above prev-day high=Y, Above Daily R1=Y, Above own 9:15 open=Y"
       },
       "sell": {
-        "count": 1,
+        "count": 0,
         "total": 7,
-        "detail": "Daily EMA stack=Y, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n, Below own 9:15 open=n"
+        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n, Below own 9:15 open=n"
       },
       "levels": {
         "openRangeClose": 7684.0,
@@ -126,7 +126,7 @@
         "s1": 6390.0,
         "prevDayHigh": 9650.0,
         "prevDayLow": 6445.0,
-        "ema15_5": 9823.01,
+        "ema15_5": 10551.51,
         "monthlyCPR_tc": 14651.5,
         "monthlyCPR_pivot": 12508.0,
         "monthlyCPR_bc": 10364.5,
@@ -149,8 +149,8 @@
       "category": "MCX_OPTION",
       "chart_url": null,
       "error": null,
-      "ltp": 4088.0,
-      "last_bar_time": "2026-11-04T11:30:00",
+      "ltp": 3838.5,
+      "last_bar_time": "2026-11-04T11:45:00",
       "signal": "NONE",
       "buy": {
         "count": 0,
@@ -169,7 +169,7 @@
         "s1": 4516.0,
         "prevDayHigh": 9423.0,
         "prevDayLow": 5127.0,
-        "ema15_5": 5013.89,
+        "ema15_5": 4622.09,
         "monthlyCPR_tc": 5963.0,
         "monthlyCPR_pivot": 5078.5,
         "monthlyCPR_bc": 4194.0,
