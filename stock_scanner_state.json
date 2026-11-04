@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T14:55:03.547166",
+  "generated_at": "2026-11-04T15:25:03.554254",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -11,7 +11,7 @@
       "security_id": "565900",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/crude-oil-mini-chart/",
-      "error": "'timestamp'",
+      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x0000029A25F3D2B0>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
       "optionLevels": null
     },
     {
@@ -19,7 +19,7 @@
       "security_id": "569003",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/gold-mini-chart/",
-      "error": "'timestamp'",
+      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x0000029A260CC910>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
       "optionLevels": null
     },
     {
@@ -27,164 +27,16 @@
       "security_id": "483080",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/silver-mini-chart/",
-      "error": null,
-      "ltp": 188511.0,
-      "last_bar_time": "2026-11-04T14:30:00",
-      "signal": "NONE",
-      "buy": {
-        "count": 5,
-        "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=Y, Above pivot=Y, Above prev-day high=Y, Above Daily R1=Y, Above ATM strike (9:15)=Y"
-      },
-      "sell": {
-        "count": 0,
-        "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n, Below ATM strike (9:15)=n"
-      },
-      "levels": {
-        "openRangeClose": 180946.0,
-        "pivot": 181009.67,
-        "r1": 185040.33,
-        "s1": 177619.33,
-        "prevDayHigh": 184400.0,
-        "prevDayLow": 176979.0,
-        "ema15_5": 188310.62,
-        "monthlyCPR_tc": 205625.0,
-        "monthlyCPR_pivot": 197511.33,
-        "monthlyCPR_bc": 189397.67,
-        "weeklyCPR_tc": 190007.5,
-        "weeklyCPR_pivot": 187099.67,
-        "weeklyCPR_bc": 184191.83,
-        "dailyCPR_tc": 181329.83,
-        "dailyCPR_pivot": 181009.67,
-        "dailyCPR_bc": 180689.5,
-        "dailyCPR_width": 640.33,
-        "dailyCPR_width_pct": 0.35,
-        "priceAt915": 179633.0,
-        "atmStrike915": 180000.0
-      },
-      "isNarrowCPR": true,
-      "optionLevels": {
-        "expiry": "2026-11-23",
-        "spot": 185005.0,
-        "maxPainStrike": 190000.0,
-        "resistanceStrike": 230000.0,
-        "supportStrike": 170000.0,
-        "atmDetails": {
-          "strike": 180000.0,
-          "ce_ltp": 12260.5,
-          "ce_oi": 1286.0,
-          "ce_iv": 53.29,
-          "ce_volume": 6300.0,
-          "ce_bid": 12217.5,
-          "ce_ask": 12314.5,
-          "pe_ltp": 3570.0,
-          "pe_oi": 3365.0,
-          "pe_iv": 36.23,
-          "pe_volume": 14417.0,
-          "pe_bid": 3570.0,
-          "pe_ask": 3583.5
-        }
-      },
-      "underlyingSignal": "NONE",
-      "confirmation": {
-        "call": "NONE",
-        "put": "NONE"
-      }
+      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x0000029A260CC910>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
+      "optionLevels": null
     },
     {
       "symbol": "NATGASMINI",
       "security_id": "568246",
       "category": "MCX",
       "chart_url": "https://dhan.co/commodity/natural-gas-mini-chart/",
-      "error": "'timestamp'",
+      "error": "HTTPSConnectionPool(host='api.dhan.co', port=443): Max retries exceeded with url: /v2/charts/intraday (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x0000029A25E8BD90>: Failed to resolve 'api.dhan.co' ([Errno 11001] getaddrinfo failed)\"))",
       "optionLevels": null
-    },
-    {
-      "symbol": "SILVERM 180000 CALL",
-      "security_id": "587898",
-      "category": "MCX_OPTION",
-      "chart_url": null,
-      "error": null,
-      "ltp": 12036.0,
-      "last_bar_time": "2026-11-04T14:30:00",
-      "signal": "NONE",
-      "buy": {
-        "count": 5,
-        "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=Y, Above pivot=Y, Above prev-day high=Y, Above Daily R1=Y, Above own 9:15 open=Y"
-      },
-      "sell": {
-        "count": 0,
-        "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Below pivot=n, Below prev-day low=n, Below Daily S1=n, Below own 9:15 open=n"
-      },
-      "levels": {
-        "openRangeClose": 7684.0,
-        "pivot": 8020.0,
-        "r1": 9595.0,
-        "s1": 6390.0,
-        "prevDayHigh": 9650.0,
-        "prevDayLow": 6445.0,
-        "ema15_5": 11978.79,
-        "monthlyCPR_tc": 14651.5,
-        "monthlyCPR_pivot": 12508.0,
-        "monthlyCPR_bc": 10364.5,
-        "weeklyCPR_tc": 14651.5,
-        "weeklyCPR_pivot": 12508.0,
-        "weeklyCPR_bc": 10364.5,
-        "dailyCPR_tc": 8047.5,
-        "dailyCPR_pivot": 8020.0,
-        "dailyCPR_bc": 7992.5,
-        "dailyCPR_width": 55.0,
-        "dailyCPR_width_pct": 0.69,
-        "priceAt915": 7180.5,
-        "atmStrike915": 7180.5
-      },
-      "isNarrowCPR": false
-    },
-    {
-      "symbol": "SILVERM 180000 PUT",
-      "security_id": "588005",
-      "category": "MCX_OPTION",
-      "chart_url": null,
-      "error": null,
-      "ltp": 3555.0,
-      "last_bar_time": "2026-11-04T14:30:00",
-      "signal": "NONE",
-      "buy": {
-        "count": 0,
-        "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=n, Above pivot=n, Above prev-day high=n, Above Daily R1=n, Above own 9:15 open=n"
-      },
-      "sell": {
-        "count": 5,
-        "total": 7,
-        "detail": "Daily EMA stack=n, 60m EMA stack=n, 15m EMA stack=Y, Below pivot=Y, Below prev-day low=Y, Below Daily S1=Y, Below own 9:15 open=Y"
-      },
-      "levels": {
-        "openRangeClose": 6668.0,
-        "pivot": 6969.5,
-        "r1": 8812.0,
-        "s1": 4516.0,
-        "prevDayHigh": 9423.0,
-        "prevDayLow": 5127.0,
-        "ema15_5": 3672.39,
-        "monthlyCPR_tc": 5963.0,
-        "monthlyCPR_pivot": 5078.5,
-        "monthlyCPR_bc": 4194.0,
-        "weeklyCPR_tc": 6171.75,
-        "weeklyCPR_pivot": 5496.0,
-        "weeklyCPR_bc": 4820.25,
-        "dailyCPR_tc": 7275.0,
-        "dailyCPR_pivot": 6969.5,
-        "dailyCPR_bc": 6664.0,
-        "dailyCPR_width": 611.0,
-        "dailyCPR_width_pct": 8.77,
-        "priceAt915": 7425.0,
-        "atmStrike915": 7425.0
-      },
-      "isNarrowCPR": false
     }
   ]
 }
