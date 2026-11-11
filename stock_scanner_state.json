@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T13:18:47.179067",
+  "generated_at": "2026-11-11T13:25:03.830717",
   "meta": {
     "max_trades_per_day": 6,
     "max_loss_per_day": 2000,
@@ -72,18 +72,18 @@
         "supportStrike": 160000.0,
         "atmDetails": {
           "strike": 187000.0,
-          "ce_ltp": 6651.0,
-          "ce_oi": 545.0,
-          "ce_iv": 48.21,
-          "ce_volume": 2345.0,
-          "ce_bid": 6616.0,
-          "ce_ask": 6649.5,
-          "pe_ltp": 4471.0,
-          "pe_oi": 548.0,
-          "pe_iv": 32.12,
-          "pe_volume": 1834.0,
-          "pe_bid": 4485.0,
-          "pe_ask": 4504.0
+          "ce_ltp": 6600.0,
+          "ce_oi": 564.0,
+          "ce_iv": 47.85,
+          "ce_volume": 2398.0,
+          "ce_bid": 6573.5,
+          "ce_ask": 6606.5,
+          "pe_ltp": 4552.0,
+          "pe_oi": 555.0,
+          "pe_iv": 32.71,
+          "pe_volume": 1865.0,
+          "pe_bid": 4521.5,
+          "pe_ask": 4544.0
         }
       },
       "underlyingSignal": "NONE",
